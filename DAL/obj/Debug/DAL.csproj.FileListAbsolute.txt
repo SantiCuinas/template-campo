@@ -1,0 +1,9 @@
+Y:\Sac\Repos\Campo 2022\TCI\DAL\bin\Debug\DAL.dll
+Y:\Sac\Repos\Campo 2022\TCI\DAL\bin\Debug\DAL.pdb
+Y:\Sac\Repos\Campo 2022\TCI\DAL\bin\Debug\BE.dll
+Y:\Sac\Repos\Campo 2022\TCI\DAL\bin\Debug\BE.pdb
+Y:\Sac\Repos\Campo 2022\TCI\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+Y:\Sac\Repos\Campo 2022\TCI\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+Y:\Sac\Repos\Campo 2022\TCI\DAL\obj\Debug\DAL.csproj.CopyComplete
+Y:\Sac\Repos\Campo 2022\TCI\DAL\obj\Debug\DAL.dll
+Y:\Sac\Repos\Campo 2022\TCI\DAL\obj\Debug\DAL.pdb

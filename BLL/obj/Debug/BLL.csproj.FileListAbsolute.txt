@@ -1,0 +1,6 @@
+Y:\Sac\Repos\Campo 2022\TCI\BLL\bin\Debug\BLL.dll
+Y:\Sac\Repos\Campo 2022\TCI\BLL\bin\Debug\BLL.pdb
+Y:\Sac\Repos\Campo 2022\TCI\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+Y:\Sac\Repos\Campo 2022\TCI\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+Y:\Sac\Repos\Campo 2022\TCI\BLL\obj\Debug\BLL.dll
+Y:\Sac\Repos\Campo 2022\TCI\BLL\obj\Debug\BLL.pdb
