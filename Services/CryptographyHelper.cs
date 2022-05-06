@@ -52,5 +52,13 @@ namespace Services
             cryptoStream.Close();
             return Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount).TrimEnd("\0".ToCharArray());
         }
+
+        public static string hash(string value)
+        {
+            var md5 = new MD5CryptoServiceProvider();
+            var md5data = md5.ComputeHash(Encoding.ASCII.GetBytes(value));
+            return (new ASCIIEncoding()).GetString(md5data);
+        }
+
     }
 }

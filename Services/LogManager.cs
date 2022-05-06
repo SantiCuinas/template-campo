@@ -8,15 +8,12 @@ namespace Services
     public class LogManager 
     {
         UserDAO userDAO = new UserDAO();
-
-        protected SqlConnection conn = new SqlConnection(@"Data Source=KUMA;Initial Catalog=TCI;Integrated Security=True");
-
         public bool log(string name, string pass)
         {
             var sesion = Session.GetInstance();
 
             var bdUser = getUser("Admin");
-            if (bdUser != null ? bdUser.password == CryptographyHelper.encrypt(pass) : false)
+            if (bdUser != null ? bdUser.password == CryptographyHelper.hash(pass) : false)
             {
                 sesion.user = bdUser;
                 return true;
