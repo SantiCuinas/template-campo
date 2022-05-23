@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d15ae210-29b4-45f4-a224-f61e03c03010": {
+      "ProjectGuid": "d15ae210-29b4-45f4-a224-f61e03c03010",
+      "DisplayName": "Services",
+      "ColorIndex": 0
+    },
+    "2e6aace4-d9f6-4595-bc40-93bbb8cc5ab1": {
+      "ProjectGuid": "2e6aace4-d9f6-4595-bc40-93bbb8cc5ab1",
+      "DisplayName": "DAL",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

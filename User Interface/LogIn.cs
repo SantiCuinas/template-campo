@@ -18,6 +18,7 @@ namespace User_Interface
         {
             if (logManager.log(txtUser.Text, txtPass.Text))
             {
+                this.Hide();
                 var form1 = new Form1();
                 form1.ShowDialog();
                 this.Hide();

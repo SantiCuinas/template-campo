@@ -1,19 +1,18 @@
 ﻿using System.Linq;
 using BE;
 using DAL;
-using System.Data.SqlClient;
 
 namespace Services
 {
-    public class LogManager 
+    public class LogManager
     {
         UserDAO userDAO = new UserDAO();
         public bool log(string name, string pass)
         {
             var sesion = Session.GetInstance();
 
-            var bdUser = getUser("Admin");
-            if (bdUser != null ? bdUser.password == CryptographyHelper.hash(pass) : false)
+            var bdUser = getUser(name);
+            if (bdUser != null ? CryptographyHelper.decrypt(bdUser.password) == pass : false)
             {
                 sesion.user = bdUser;
                 return true;

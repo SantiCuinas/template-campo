@@ -16,3 +16,22 @@ Y:\Sac\Repos\Campo 2022\TCI\User Interface\obj\Debug\User Interface.csproj.CoreC
 Y:\Sac\Repos\Campo 2022\TCI\User Interface\obj\Debug\User Interface.csproj.CopyComplete
 Y:\Sac\Repos\Campo 2022\TCI\User Interface\obj\Debug\User Interface.exe
 Y:\Sac\Repos\Campo 2022\TCI\User Interface\obj\Debug\User Interface.pdb
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\User Interface.exe.config
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\User Interface.exe
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\User Interface.pdb
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\BE.dll
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\Services.dll
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\DAL.dll
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\BE.pdb
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\Services.pdb
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\DAL.pdb
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.csproj.AssemblyReference.cache
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.csproj.SuggestedBindingRedirects.cache
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.LogIn.resources
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.Properties.Resources.resources
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.csproj.GenerateResource.cache
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.csproj.CoreCompileInputs.cache
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.csproj.CopyComplete
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.exe
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.pdb
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.Form1.resources

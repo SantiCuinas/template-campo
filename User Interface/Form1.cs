@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Services;
 
 namespace User_Interface
 {
@@ -15,6 +9,15 @@ namespace User_Interface
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Session.CloseSession();
+            this.Hide();
+            var logInForm = new LogIn();
+            logInForm.ShowDialog();
+            this.Close();
         }
     }
 }
