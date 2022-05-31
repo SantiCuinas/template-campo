@@ -20,13 +20,25 @@ namespace DAL
             {
                 while (data.Read())
                 {
-                    var usuario = new User() { name = data["name"].ToString(), password = data["password"].ToString() };
+                    var usuario = new User() { name = data["name"].ToString(), password = data["password"].ToString(), intentosLogin = int.Parse(data["intentos"].ToString()) };
                     usuarios.Add(usuario);
                 }
             }
 
             conn.Close();
             return usuarios;
+        }
+
+        public void actualizarIntentos(string username, int intentos)
+        {
+            var conn = this.conn;
+            var queryString = string.Format("UPDATE users SET [intentos] ={0} where name = '{1}';", intentos, username);
+
+            var query = new SqlCommand(queryString, conn);
+            conn.Open();
+            query.ExecuteNonQuery();
+            conn.Close();
+
         }
     }
 }

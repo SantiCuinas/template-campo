@@ -10,7 +10,17 @@
       "ProjectGuid": "2e6aace4-d9f6-4595-bc40-93bbb8cc5ab1",
       "DisplayName": "DAL",
       "ColorIndex": 1
+    },
+    "188bee0a-3d1a-45c9-9ce0-9ea4388c5d31": {
+      "ProjectGuid": "188bee0a-3d1a-45c9-9ce0-9ea4388c5d31",
+      "DisplayName": "BE",
+      "ColorIndex": 2
+    },
+    "5cc5acb8-973f-4ad6-8067-2fb3cec6154d": {
+      "ProjectGuid": "5cc5acb8-973f-4ad6-8067-2fb3cec6154d",
+      "DisplayName": "User Interface",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

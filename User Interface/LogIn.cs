@@ -16,17 +16,25 @@ namespace User_Interface
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if (logManager.log(txtUser.Text, txtPass.Text))
+            try
             {
-                this.Hide();
-                var form1 = new Form1();
-                form1.ShowDialog();
-                this.Hide();
+                if (logManager.log(txtUser.Text, txtPass.Text))
+                {
+                    this.Hide();
+                    var form1 = new Form1();
+                    form1.ShowDialog();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (UsuarioBloqueadoException)
             {
-                MessageBox.Show("Usuario o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El usuario ha sido bloqueado. Comuniquese con el administrador de sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
     }
 }

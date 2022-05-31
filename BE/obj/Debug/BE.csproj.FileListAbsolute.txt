@@ -3,3 +3,9 @@ Y:\Sac\Repos\Campo 2022\TCI\BE\bin\Debug\BE.pdb
 Y:\Sac\Repos\Campo 2022\TCI\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 Y:\Sac\Repos\Campo 2022\TCI\BE\obj\Debug\BE.dll
 Y:\Sac\Repos\Campo 2022\TCI\BE\obj\Debug\BE.pdb
+Y:\Sac\Repos\template-campo\BE\bin\Debug\BE.dll
+Y:\Sac\Repos\template-campo\BE\bin\Debug\BE.pdb
+Y:\Sac\Repos\template-campo\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+Y:\Sac\Repos\template-campo\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+Y:\Sac\Repos\template-campo\BE\obj\Debug\BE.dll
+Y:\Sac\Repos\template-campo\BE\obj\Debug\BE.pdb

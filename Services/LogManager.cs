@@ -12,14 +12,33 @@ namespace Services
             var sesion = Session.GetInstance();
 
             var bdUser = getUser(name);
-            if (bdUser != null ? CryptographyHelper.decrypt(bdUser.password) == pass : false)
+            if ((bdUser != null ? CryptographyHelper.decrypt(bdUser.password) != pass : true) || bdUser.intentosLogin >= 3)
             {
-                sesion.user = bdUser;
-                return true;
+                try
+                {
+                    if (bdUser.intentosLogin >= 3)
+                    {
+                        throw new UsuarioBloqueadoException();
+                    }
+
+                    userDAO.actualizarIntentos(name, bdUser.intentosLogin + 1);
+                    return false;
+                }
+                catch (System.Exception ex)
+                {
+                    if(ex is UsuarioBloqueadoException)
+                    {
+                        throw ex;
+                    }
+                    return false;
+                }
+
             }
             else
             {
-                return false;
+                sesion.user = bdUser;
+                return true;
+
             }
         }
 
