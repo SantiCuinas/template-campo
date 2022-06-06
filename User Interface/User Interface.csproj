@@ -93,6 +93,10 @@
       <Project>{188bee0a-3d1a-45c9-9ce0-9ea4388c5d31}</Project>
       <Name>BE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{F6CD396E-F7C2-45BF-9CC6-E0759B84FFD7}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Services\Services.csproj">
       <Project>{d15ae210-29b4-45f4-a224-f61e03c03010}</Project>
       <Name>Services</Name>

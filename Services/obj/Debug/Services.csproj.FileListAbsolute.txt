@@ -12,9 +12,7 @@ Y:\Sac\Repos\Campo 2022\TCI\Services\obj\Debug\Services.pdb
 Y:\Sac\Repos\template-campo\Services\bin\Debug\Services.dll
 Y:\Sac\Repos\template-campo\Services\bin\Debug\Services.pdb
 Y:\Sac\Repos\template-campo\Services\bin\Debug\BE.dll
-Y:\Sac\Repos\template-campo\Services\bin\Debug\DAL.dll
 Y:\Sac\Repos\template-campo\Services\bin\Debug\BE.pdb
-Y:\Sac\Repos\template-campo\Services\bin\Debug\DAL.pdb
 Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.csproj.AssemblyReference.cache
 Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
 Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.csproj.CopyComplete

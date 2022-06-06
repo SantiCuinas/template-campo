@@ -43,19 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptographyHelper.cs" />
-    <Compile Include="LogManager.cs" />
+    <Compile Include="Familia.cs" />
+    <Compile Include="Patente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rol.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="UsuarioBloqueadoException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{188bee0a-3d1a-45c9-9ce0-9ea4388c5d31}</Project>
       <Name>BE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{2e6aace4-d9f6-4595-bc40-93bbb8cc5ab1}</Project>
-      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

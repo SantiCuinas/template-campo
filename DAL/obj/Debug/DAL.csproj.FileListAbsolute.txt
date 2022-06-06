@@ -16,3 +16,5 @@ Y:\Sac\Repos\template-campo\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 Y:\Sac\Repos\template-campo\DAL\obj\Debug\DAL.csproj.CopyComplete
 Y:\Sac\Repos\template-campo\DAL\obj\Debug\DAL.dll
 Y:\Sac\Repos\template-campo\DAL\obj\Debug\DAL.pdb
+Y:\Sac\Repos\template-campo\DAL\bin\Debug\Services.dll
+Y:\Sac\Repos\template-campo\DAL\bin\Debug\Services.pdb

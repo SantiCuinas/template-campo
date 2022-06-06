@@ -35,3 +35,5 @@ Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.csproj.CopyC
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.exe
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User Interface.pdb
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.Form1.resources
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\BLL.dll
+Y:\Sac\Repos\template-campo\User Interface\bin\Debug\BLL.pdb

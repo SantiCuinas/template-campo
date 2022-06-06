@@ -1,11 +1,9 @@
-﻿using BE;
-
-namespace Services
+﻿namespace Services
 {
     public class Session
     {
         private Session() { }
-        public User user { get; set; }
+        public static User user { get; set; }
 
         private static Session instance;
 

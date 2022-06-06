@@ -1,8 +1,9 @@
-﻿using System.Linq;
-using BE;
+﻿using System.Collections.Generic;
+using System.Linq;
 using DAL;
+using Services;
 
-namespace Services
+namespace BLL
 {
     public class LogManager
     {
@@ -12,7 +13,7 @@ namespace Services
             var sesion = Session.GetInstance();
 
             var bdUser = getUser(name);
-            if ((bdUser != null ? CryptographyHelper.decrypt(bdUser.password) != pass : true) || bdUser.intentosLogin >= 3)
+            if ((bdUser != null ? bdUser.password != CryptographyHelper.hash(pass) : true) || bdUser.intentosLogin >= 3)
             {
                 try
                 {
@@ -26,7 +27,7 @@ namespace Services
                 }
                 catch (System.Exception ex)
                 {
-                    if(ex is UsuarioBloqueadoException)
+                    if (ex is UsuarioBloqueadoException)
                     {
                         throw ex;
                     }
@@ -36,9 +37,8 @@ namespace Services
             }
             else
             {
-                sesion.user = bdUser;
+                Session.user = bdUser;
                 return true;
-
             }
         }
 

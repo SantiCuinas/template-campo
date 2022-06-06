@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Services
 {
-    internal class CryptographyHelper
+    public class CryptographyHelper
     {
         public static string encrypt(string text)
         {
@@ -14,6 +14,12 @@ namespace Services
         public static string decrypt(string text)
         {
             return Encoding.Unicode.GetString(ProtectedData.Unprotect(Convert.FromBase64String(text), null, DataProtectionScope.CurrentUser));
+        }
+        public static string hash(string value)
+        {
+            var md5 = new MD5CryptoServiceProvider();
+            var md5data = md5.ComputeHash(Encoding.ASCII.GetBytes(value));
+            return (new ASCIIEncoding()).GetString(md5data);
         }
     }
 }
