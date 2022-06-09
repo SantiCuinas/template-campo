@@ -5,6 +5,8 @@
         private Session() { }
         public static User user { get; set; }
 
+        public static Idioma idioma { get; set; }
+
         private static Session instance;
 
         public static Session GetInstance()

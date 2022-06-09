@@ -10,8 +10,6 @@ namespace BLL
         UserDAO userDAO = new UserDAO();
         public bool log(string name, string pass)
         {
-            var sesion = Session.GetInstance();
-
             var bdUser = getUser(name);
             if ((bdUser != null ? bdUser.password != CryptographyHelper.hash(pass) : true) || bdUser.intentosLogin >= 3)
             {
@@ -38,6 +36,8 @@ namespace BLL
             else
             {
                 Session.user = bdUser;
+                // Levantar esta data de la BD
+                Session.idioma = new Idioma() { id = "", nombre = "", textos = new List<Texto>() { new Texto() { id = "ENG_BTN_01", idioma_id = "", texto = "Add User" } } };
                 return true;
             }
         }
