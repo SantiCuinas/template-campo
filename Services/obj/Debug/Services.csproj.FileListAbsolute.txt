@@ -18,3 +18,5 @@ Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.csproj.CoreCompileInputs
 Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.csproj.CopyComplete
 Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.dll
 Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.pdb
+Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.FormActualizable.resources
+Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.csproj.GenerateResource.cache

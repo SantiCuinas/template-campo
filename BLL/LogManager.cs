@@ -36,8 +36,8 @@ namespace BLL
             else
             {
                 Session.user = bdUser;
-                // Levantar esta data de la BD
-                Session.idioma = new Idioma() { id = "", nombre = "", textos = new List<Texto>() { new Texto() { id = "ENG_BTN_01", idioma_id = "", texto = "Add User" } } };
+                var idiomaMgmr = new IdiomaManager();
+                Session.idioma = idiomaMgmr.getIdioma("ENG");
                 return true;
             }
         }
