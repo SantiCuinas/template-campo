@@ -18,6 +18,7 @@ namespace User_Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var x = "yolo";
             Session.CloseSession();
             this.Hide();
             var logInForm = new LogIn();
