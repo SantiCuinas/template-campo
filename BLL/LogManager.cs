@@ -11,6 +11,7 @@ namespace BLL
         public bool log(string name, string pass)
         {
             var bdUser = getUser(name);
+            var x = CryptographyHelper.hash(pass);
             if ((bdUser != null ? bdUser.password != CryptographyHelper.hash(pass) : true) || bdUser.intentosLogin >= 3)
             {
                 try

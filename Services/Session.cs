@@ -22,5 +22,10 @@
         {
             instance = null;
         }
+
+        public static void SetIdioma(Idioma idioma)
+        {
+            Session.idioma = idioma;
+        }
     }
 }

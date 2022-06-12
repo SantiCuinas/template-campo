@@ -5,19 +5,43 @@ namespace Services
 {
     public class FormActualizable : Form
     {
-        protected List<Control> controles;
+        public List<Control> controlesList;
 
         public FormActualizable()
         {
-            controles = new List<Control>();
+            controlesList = new List<Control>();
+            actualizarTextos();
         }
 
         public void actualizarTextos()
         {
-            foreach (Control control in this.Controls)
+            foreach (Control control in controlesList)
             {
-                control.Text = Session.idioma.textos.Find(x => x.id == control.Tag?.ToString())?.texto ?? control.Text;
+                actualizarControl(Session.idioma.textos.Find(x => x.id == control.Tag?.ToString())?.texto ?? control.Text, control);
             }
+        }
+
+        private void actualizarControl(string texto, Control control)
+        {
+            control.Text = texto;
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // FormActualizable
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "FormActualizable";
+            this.Load += new System.EventHandler(this.FormActualizable_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void FormActualizable_Load(object sender, System.EventArgs e)
+        {
+
         }
     }
 }
