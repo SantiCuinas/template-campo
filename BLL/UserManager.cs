@@ -14,8 +14,8 @@ namespace BLL
 
         public List<Familia> GetFamilias()
         {
-            var UserDao = new UserDAO();
-            return UserDao.getAllFamilia();
+            var rolDao = new RolDAO();
+            return rolDao.getAllFamilia();
         }
 
         public void addUser(User user)
@@ -38,13 +38,14 @@ namespace BLL
 
         public void resetIntentos(string username)
         {
-
+            var UserDao = new UserDAO();
+            UserDao.actualizarIntentos(username, 0);
         }
 
         public List<Rol> getRoles()
         {
-            var UserDao = new UserDAO();
-            return UserDao.getAllRoles();
+            var rolDao = new RolDAO();
+            return rolDao.getAllRoles();
         }
     }
 }

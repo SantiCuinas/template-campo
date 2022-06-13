@@ -9,7 +9,7 @@ namespace Services
         {
             foreach (var patente in patentes)
             {
-                if (patente.tienePermiso(permiso))
+                if (patente.tienePermiso(permiso) || this.name == permiso)
                 {
                     return true;
                 };

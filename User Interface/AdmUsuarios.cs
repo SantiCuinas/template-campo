@@ -83,7 +83,7 @@ namespace User_Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            userMngr.addUser(new User() {id = Guid.NewGuid().ToString(), name = tbName.Text, password = CryptographyHelper.hash(tbPass.Text), intentosLogin = 0 });
+            userMngr.addUser(new User() {id = Guid.NewGuid().ToString(), rol = (Rol)cbRol.SelectedItem, name = tbName.Text, password = CryptographyHelper.hash(tbPass.Text), intentosLogin = 0 });
             refreshUserList();
         }
 
@@ -95,7 +95,7 @@ namespace User_Interface
 
         private void button2_Click(object sender, EventArgs e)
         {
-            userMngr.updateUser(new User() { id = selectedUser.id, name = tbName.Text, password = tbPass.Text == "" ? selectedUser.password :  CryptographyHelper.hash(tbPass.Text) , intentosLogin = 0 });
+            userMngr.updateUser(new User() { id = selectedUser.id, rol = (Rol)cbRol.SelectedItem, name = tbName.Text, password = tbPass.Text == "" ? selectedUser.password :  CryptographyHelper.hash(tbPass.Text) , intentosLogin = 0 });
             refreshUserList();
         }
 

@@ -4,7 +4,7 @@
     {
         public override bool tienePermiso(string permiso)
         {
-            return permiso == this.id;
+            return permiso == this.name;
         }
     }
 }

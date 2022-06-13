@@ -34,13 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbTipo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,15 +95,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Tipo";
             // 
-            // lbTipo
-            // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(6, 74);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(35, 13);
-            this.lbTipo.TabIndex = 6;
-            this.lbTipo.Text = "label4";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -115,13 +106,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbTipo);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.clbChildren);
-            this.groupBox1.Controls.Add(this.lbTipo);
             this.groupBox1.Controls.Add(this.tbName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(153, 12);
@@ -130,6 +121,7 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos rol";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button3
             // 
@@ -139,6 +131,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Borrar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -148,6 +141,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Actualizar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -157,6 +151,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -166,6 +161,19 @@
             this.button4.TabIndex = 12;
             this.button4.Text = "Volver";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // cbTipo
+            // 
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
+            "familia",
+            "patente"});
+            this.cbTipo.Location = new System.Drawing.Point(9, 77);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cbTipo.TabIndex = 12;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
             // 
             // AdmRoles
             // 
@@ -194,12 +202,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbTipo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox cbTipo;
     }
 }
