@@ -8,6 +8,7 @@ namespace BLL
     public class LogManager
     {
         UserDAO userDAO = new UserDAO();
+        UserManager userMngr = new UserManager();
         public bool log(string name, string pass)
         {
             var bdUser = getUser(name);
@@ -45,7 +46,7 @@ namespace BLL
 
         private User getUser(string userName)
         {
-            return userDAO.Select(userName).FirstOrDefault();
+            return userMngr.getUserFromName(userName);
         }
     }
 }

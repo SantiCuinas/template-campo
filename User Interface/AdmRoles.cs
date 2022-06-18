@@ -27,7 +27,7 @@ namespace User_Interface
         }
         private void refreshRolesList()
         {
-            roles = userMngr.getRoles();
+            roles = rolMngr.getRoles();
             lbRoles.Items.Clear();
             foreach (var rol in roles)
             {

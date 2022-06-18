@@ -15,3 +15,5 @@ Y:\Sac\Repos\template-campo\BLL\bin\Debug\Services.dll
 Y:\Sac\Repos\template-campo\BLL\bin\Debug\DAL.pdb
 Y:\Sac\Repos\template-campo\BLL\bin\Debug\Services.pdb
 Y:\Sac\Repos\template-campo\BLL\obj\Debug\BLL.csproj.CopyComplete
+Y:\Sac\Repos\template-campo\BLL\bin\Debug\BE.dll
+Y:\Sac\Repos\template-campo\BLL\bin\Debug\BE.pdb

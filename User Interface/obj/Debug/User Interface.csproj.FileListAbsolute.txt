@@ -39,3 +39,6 @@ Y:\Sac\Repos\template-campo\User Interface\bin\Debug\BLL.pdb
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmUsuarios.resources
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.Home.resources
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmRoles.resources
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.DatosAlumno.resources
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AltaAlumno.resources
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmCursos.resources

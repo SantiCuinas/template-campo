@@ -21,7 +21,7 @@ namespace DAL
             {
                 while (data.Read())
                 {
-                    var usuario = new User() { id = data["id"].ToString(), name = data["name"].ToString(), password = data["password"].ToString(), intentosLogin = int.Parse(data["intentos"].ToString()), rol = rolDao.getFamilia(data["rol"].ToString()) };
+                    var usuario = new User() { id = data["id"].ToString(), name = data["name"].ToString(), password = data["password"].ToString(), intentosLogin = int.Parse(data["intentos"].ToString()), rol = new Familia() { id = data["rol"].ToString() } };
                     usuarios.Add(usuario);
                 }
             }

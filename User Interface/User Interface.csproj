@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdmCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmCursos.Designer.cs">
+      <DependentUpon>AdmCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdmRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,18 @@
     </Compile>
     <Compile Include="AdmUsuarios.Designer.cs">
       <DependentUpon>AdmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltaAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaAlumno.Designer.cs">
+      <DependentUpon>AltaAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatosAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosAlumno.Designer.cs">
+      <DependentUpon>DatosAlumno.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -72,11 +90,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdmCursos.resx">
+      <DependentUpon>AdmCursos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdmRoles.resx">
       <DependentUpon>AdmRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdmUsuarios.resx">
       <DependentUpon>AdmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaAlumno.resx">
+      <DependentUpon>AltaAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosAlumno.resx">
+      <DependentUpon>DatosAlumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -92,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,6 +147,9 @@
       <Project>{d15ae210-29b4-45f4-a224-f61e03c03010}</Project>
       <Name>Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AnaCarbonetti.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

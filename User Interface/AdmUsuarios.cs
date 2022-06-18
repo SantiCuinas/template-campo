@@ -11,6 +11,7 @@ namespace User_Interface
         private List<User> usuarios;
         private List<Familia> roles;
         private User selectedUser;
+        private RolManager rolMngr;
 
         public AdmUsuarios()
         {
@@ -23,9 +24,10 @@ namespace User_Interface
             cbRol.ValueMember = "id";
 
             userMngr = new UserManager();
+            rolMngr = new RolManager();
 
             refreshUserList();
-            roles = userMngr.GetFamilias();
+            roles = rolMngr.GetFamilias();
             refreshRolesList();
 
         }

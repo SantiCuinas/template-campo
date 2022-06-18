@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using System.Collections.Generic;
+using DAL;
 using Services;
 
 namespace BLL
@@ -15,6 +16,22 @@ namespace BLL
         {
             var RolDao = new RolDAO();
             RolDao.AddRol(rol);
+        }
+
+        public Rol getRolForUser(string rolId)
+        {
+            var RolDao = new RolDAO();
+            return RolDao.getFamilia(rolId);
+        }
+        public List<Rol> getRoles()
+        {
+            var rolDao = new RolDAO();
+            return rolDao.getAllRoles();
+        }
+        public List<Familia> GetFamilias()
+        {
+            var rolDao = new RolDAO();
+            return rolDao.getAllFamilia();
         }
     }
 }

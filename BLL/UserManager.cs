@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DAL;
 using Services;
 
@@ -6,16 +7,18 @@ namespace BLL
 {
     public class UserManager
     {
+        public User getUserFromName(string username)
+        {
+            var userDao = new UserDAO();
+            var rolMngr = new RolManager();
+            var user = userDao.Select(username).FirstOrDefault();
+            if (user != null) user.rol = rolMngr.getRolForUser(user.rol.id);
+            return user;
+        }
         public List<User> getUsuarios()
         {
             var UserDao = new UserDAO();
             return UserDao.SelectAll();
-        }
-
-        public List<Familia> GetFamilias()
-        {
-            var rolDao = new RolDAO();
-            return rolDao.getAllFamilia();
         }
 
         public void addUser(User user)
@@ -40,12 +43,6 @@ namespace BLL
         {
             var UserDao = new UserDAO();
             UserDao.actualizarIntentos(username, 0);
-        }
-
-        public List<Rol> getRoles()
-        {
-            var rolDao = new RolDAO();
-            return rolDao.getAllRoles();
         }
     }
 }

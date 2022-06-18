@@ -18,7 +18,6 @@ namespace User_Interface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var x = "yolo";
             Session.CloseSession();
             this.Hide();
             var logInForm = new LogIn();
@@ -68,6 +67,45 @@ namespace User_Interface
             else
             {
                 MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_01".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var alumnoMngr = new AlumnoManager();
+            var alumno = alumnoMngr.verificarDatos(tbDniVerificar.Text);
+
+            if (alumno == null)
+            {
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_03".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                var datosAlumno = new DatosAlumno(alumno);
+                datosAlumno.ShowDialog();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var altaAlumno = new AltaAlumno();
+            altaAlumno.ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var alumnoMngr = new AlumnoManager();
+            var alumno = alumnoMngr.verificarDatos(tbDniVerificar.Text);
+
+            if (alumno == null)
+            {
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_03".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var admCusos = new AdmCursos(alumno);
+                admCusos.ShowDialog();
             }
         }
     }
