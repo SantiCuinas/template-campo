@@ -31,16 +31,18 @@
             this.btnLogIn = new System.Windows.Forms.Button();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
+            this.lbPass = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(148, 110);
+            this.btnLogIn.Location = new System.Drawing.Point(152, 123);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(75, 23);
             this.btnLogIn.TabIndex = 0;
+            this.btnLogIn.Tag = "BTN_08";
             this.btnLogIn.Text = "Ingresar";
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
@@ -61,36 +63,53 @@
             this.txtPass.TabIndex = 2;
             this.txtPass.UseSystemPasswordChar = true;
             // 
-            // label1
+            // lbUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(120, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Usuario";
+            this.lbUser.AutoSize = true;
+            this.lbUser.Location = new System.Drawing.Point(120, 61);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(43, 13);
+            this.lbUser.TabIndex = 3;
+            this.lbUser.Tag = "LB_01";
+            this.lbUser.Text = "Usuario";
             // 
-            // label2
+            // lbPass
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(102, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Contraseña";
+            this.lbPass.AutoSize = true;
+            this.lbPass.Location = new System.Drawing.Point(102, 87);
+            this.lbPass.Name = "lbPass";
+            this.lbPass.Size = new System.Drawing.Size(61, 13);
+            this.lbPass.TabIndex = 4;
+            this.lbPass.Tag = "LB_02";
+            this.lbPass.Text = "Contraseña";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ESP",
+            "ENG"});
+            this.comboBox1.Location = new System.Drawing.Point(294, 158);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(65, 21);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.Text = "ENG";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(371, 191);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lbPass);
+            this.Controls.Add(this.lbUser);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnLogIn);
             this.Name = "LogIn";
-            this.Text = "Form1";
+            this.Text = "Log in";
+            this.Load += new System.EventHandler(this.LogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,8 +120,9 @@
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbUser;
+        private System.Windows.Forms.Label lbPass;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

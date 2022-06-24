@@ -29,22 +29,23 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbRol = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.cbRol = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbUsuarios = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.tbPass = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btDesbloqueo = new System.Windows.Forms.Button();
+            this.gbDatos = new System.Windows.Forms.GroupBox();
             this.lbBloqueo = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.btDesbloqueo = new System.Windows.Forms.Button();
+            this.tbPass = new System.Windows.Forms.TextBox();
+            this.lbPass = new System.Windows.Forms.Label();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.lbUsuarios = new System.Windows.Forms.ListBox();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.gbDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -56,23 +57,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
-            // label2
+            // lbName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(6, 63);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(44, 13);
+            this.lbName.TabIndex = 1;
+            this.lbName.Tag = "LB_04";
+            this.lbName.Text = "Nombre";
             // 
-            // label3
+            // lbRol
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Rol";
+            this.lbRol.AutoSize = true;
+            this.lbRol.Location = new System.Drawing.Point(6, 117);
+            this.lbRol.Name = "lbRol";
+            this.lbRol.Size = new System.Drawing.Size(23, 13);
+            this.lbRol.TabIndex = 2;
+            this.lbRol.Tag = "LB_06";
+            this.lbRol.Text = "Rol";
             // 
             // lbId
             // 
@@ -97,58 +100,103 @@
             this.cbRol.Size = new System.Drawing.Size(126, 21);
             this.cbRol.TabIndex = 5;
             // 
-            // groupBox1
+            // gbDatos
             // 
-            this.groupBox1.Controls.Add(this.lbBloqueo);
-            this.groupBox1.Controls.Add(this.btDesbloqueo);
-            this.groupBox1.Controls.Add(this.tbPass);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.cbRol);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.tbName);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lbId);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(199, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(316, 251);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos del usuario";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gbDatos.Controls.Add(this.lbBloqueo);
+            this.gbDatos.Controls.Add(this.btDesbloqueo);
+            this.gbDatos.Controls.Add(this.tbPass);
+            this.gbDatos.Controls.Add(this.lbPass);
+            this.gbDatos.Controls.Add(this.btnBorrar);
+            this.gbDatos.Controls.Add(this.btnUpdate);
+            this.gbDatos.Controls.Add(this.btnCreate);
+            this.gbDatos.Controls.Add(this.cbRol);
+            this.gbDatos.Controls.Add(this.label1);
+            this.gbDatos.Controls.Add(this.tbName);
+            this.gbDatos.Controls.Add(this.lbName);
+            this.gbDatos.Controls.Add(this.lbId);
+            this.gbDatos.Controls.Add(this.lbRol);
+            this.gbDatos.Location = new System.Drawing.Point(199, 12);
+            this.gbDatos.Name = "gbDatos";
+            this.gbDatos.Size = new System.Drawing.Size(316, 251);
+            this.gbDatos.TabIndex = 6;
+            this.gbDatos.TabStop = false;
+            this.gbDatos.Tag = "GB_03";
+            this.gbDatos.Text = "Datos del usuario";
+            this.gbDatos.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button3
+            // lbBloqueo
             // 
-            this.button3.Location = new System.Drawing.Point(230, 222);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Borrar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.lbBloqueo.AutoSize = true;
+            this.lbBloqueo.ForeColor = System.Drawing.Color.Red;
+            this.lbBloqueo.Location = new System.Drawing.Point(9, 194);
+            this.lbBloqueo.Name = "lbBloqueo";
+            this.lbBloqueo.Size = new System.Drawing.Size(129, 13);
+            this.lbBloqueo.TabIndex = 12;
+            this.lbBloqueo.Tag = "LB_03";
+            this.lbBloqueo.Text = "El usuario esta bloqueado";
+            this.lbBloqueo.Visible = false;
             // 
-            // button2
+            // btDesbloqueo
             // 
-            this.button2.Location = new System.Drawing.Point(121, 222);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Actualizar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btDesbloqueo.Enabled = false;
+            this.btDesbloqueo.Location = new System.Drawing.Point(170, 131);
+            this.btDesbloqueo.Name = "btDesbloqueo";
+            this.btDesbloqueo.Size = new System.Drawing.Size(123, 23);
+            this.btDesbloqueo.TabIndex = 11;
+            this.btDesbloqueo.Tag = "BTN_13";
+            this.btDesbloqueo.Text = "Desbloquear";
+            this.btDesbloqueo.UseVisualStyleBackColor = true;
+            this.btDesbloqueo.Click += new System.EventHandler(this.btDesbloqueo_Click);
             // 
-            // button1
+            // tbPass
             // 
-            this.button1.Location = new System.Drawing.Point(12, 222);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tbPass.Location = new System.Drawing.Point(167, 79);
+            this.tbPass.Name = "tbPass";
+            this.tbPass.Size = new System.Drawing.Size(126, 20);
+            this.tbPass.TabIndex = 10;
+            // 
+            // lbPass
+            // 
+            this.lbPass.AutoSize = true;
+            this.lbPass.Location = new System.Drawing.Point(167, 63);
+            this.lbPass.Name = "lbPass";
+            this.lbPass.Size = new System.Drawing.Size(96, 13);
+            this.lbPass.TabIndex = 9;
+            this.lbPass.Tag = "LB_05";
+            this.lbPass.Text = "Nueva Contraseña";
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(230, 222);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 8;
+            this.btnBorrar.Tag = "BTN_12";
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(121, 222);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Tag = "BTN_11";
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(12, 222);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.TabIndex = 6;
+            this.btnCreate.Tag = "BTN_10";
+            this.btnCreate.Text = "Agregar";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbUsuarios
             // 
@@ -159,67 +207,39 @@
             this.lbUsuarios.TabIndex = 7;
             this.lbUsuarios.SelectedIndexChanged += new System.EventHandler(this.lbUsuarios_SelectedIndexChanged);
             // 
-            // button4
+            // btnBack
             // 
-            this.button4.Location = new System.Drawing.Point(12, 283);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Volver";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnBack.Location = new System.Drawing.Point(12, 283);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 9;
+            this.btnBack.Tag = "BTN_09";
+            this.btnBack.Text = "Volver";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.button4_Click);
             // 
-            // tbPass
+            // treeView1
             // 
-            this.tbPass.Location = new System.Drawing.Point(167, 79);
-            this.tbPass.Name = "tbPass";
-            this.tbPass.Size = new System.Drawing.Size(126, 20);
-            this.tbPass.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(167, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Nueva Contraseña";
-            // 
-            // btDesbloqueo
-            // 
-            this.btDesbloqueo.Enabled = false;
-            this.btDesbloqueo.Location = new System.Drawing.Point(170, 131);
-            this.btDesbloqueo.Name = "btDesbloqueo";
-            this.btDesbloqueo.Size = new System.Drawing.Size(123, 23);
-            this.btDesbloqueo.TabIndex = 11;
-            this.btDesbloqueo.Text = "Desbloquear";
-            this.btDesbloqueo.UseVisualStyleBackColor = true;
-            this.btDesbloqueo.Click += new System.EventHandler(this.btDesbloqueo_Click);
-            // 
-            // lbBloqueo
-            // 
-            this.lbBloqueo.AutoSize = true;
-            this.lbBloqueo.ForeColor = System.Drawing.Color.Red;
-            this.lbBloqueo.Location = new System.Drawing.Point(9, 194);
-            this.lbBloqueo.Name = "lbBloqueo";
-            this.lbBloqueo.Size = new System.Drawing.Size(129, 13);
-            this.lbBloqueo.TabIndex = 12;
-            this.lbBloqueo.Text = "El usuario esta bloqueado";
-            this.lbBloqueo.Visible = false;
+            this.treeView1.Location = new System.Drawing.Point(521, 12);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(181, 251);
+            this.treeView1.TabIndex = 10;
             // 
             // AdmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 318);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(712, 318);
+            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lbUsuarios);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbDatos);
             this.Name = "AdmUsuarios";
+            this.Tag = "BTN_02";
             this.Text = "AdmUsuarios";
             this.Load += new System.EventHandler(this.AdmUsuarios_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbDatos.ResumeLayout(false);
+            this.gbDatos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -227,20 +247,21 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbRol;
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.ComboBox cbRol;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox gbDatos;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.ListBox lbUsuarios;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox tbPass;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbPass;
         private System.Windows.Forms.Button btDesbloqueo;
         private System.Windows.Forms.Label lbBloqueo;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

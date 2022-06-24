@@ -6,13 +6,25 @@ using Services;
 
 namespace User_Interface
 {
-    public partial class AltaAlumno : Form
+    public partial class AltaAlumno : FormActualizable
     {
         DataVerificator verificator;
         public AltaAlumno()
         {
             InitializeComponent();
             verificator = new DataVerificator();
+
+            this.controlesList.Add(lbNombre);
+            this.controlesList.Add(lbApellido);
+            this.controlesList.Add(lbBdate);
+            this.controlesList.Add(lbAddress);
+            this.controlesList.Add(btnAdd);
+            this.controlesList.Add(btnBack);
+            this.controlesList.Add(gbData);
+            this.controlesList.Add(this);
+
+            var idiomaMngr = new IdiomaManager();
+            idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,7 +47,7 @@ namespace User_Interface
             if (verificationErrors.Count == 0)
             {
                 alumnoMngr.altaAlumno(alumno);
-                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_05")?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_05")?.texto, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -46,6 +58,17 @@ namespace User_Interface
                 }
                 MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
+
+        private void AltaAlumno_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

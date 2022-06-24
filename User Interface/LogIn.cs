@@ -5,7 +5,7 @@ using Services;
 
 namespace User_Interface
 {
-    public partial class LogIn : Form
+    public partial class LogIn : FormActualizable
     {
         private LogManager logManager;
 
@@ -28,14 +28,31 @@ namespace User_Interface
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_07")?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (UsuarioBloqueadoException)
             {
-                MessageBox.Show("El usuario ha sido bloqueado. Comuniquese con el administrador de sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_06")?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+            this.controlesList.Add(lbPass);
+            this.controlesList.Add(lbUser);
+            this.controlesList.Add(btnLogIn);
+            Session.selectedIdioma = "ENG";
+            var idiomaMngr = new IdiomaManager();
+            idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session.selectedIdioma = comboBox1.SelectedItem.ToString();
+            var idiomaMngr = new IdiomaManager();
+            idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
         }
     }
 }

@@ -6,7 +6,7 @@ using Services;
 
 namespace User_Interface
 {
-    public partial class AdmRoles : Form
+    public partial class AdmRoles : FormActualizable
     {
         private UserManager userMngr;
         private List<Rol> roles;
@@ -24,6 +24,20 @@ namespace User_Interface
 
             clbChildren.DisplayMember = "name";
             clbChildren.ValueMember = "id";
+
+            this.controlesList.Add(btnBack);
+            this.controlesList.Add(btnCreate);
+            this.controlesList.Add(btnDelete);
+            this.controlesList.Add(btnUpdate);
+            this.controlesList.Add(lbNombre);
+            this.controlesList.Add(lbTipo);
+            this.controlesList.Add(lbHijos);
+            this.controlesList.Add(gbData);
+            this.controlesList.Add(this);
+
+            var idiomaMngr = new IdiomaManager();
+            idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
+
         }
         private void refreshRolesList()
         {
@@ -95,8 +109,6 @@ namespace User_Interface
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var form1 = new Home();
-            form1.ShowDialog();
             this.Close();
         }
 

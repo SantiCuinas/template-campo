@@ -17,7 +17,7 @@ namespace BLL
             return errorMessage;
         }
 
-        public void CheckForEmpty(Alumno alumno)
+        private void CheckForEmpty(Alumno alumno)
         {
             if (alumno.dni == "") errorMessage.Add("VER_01");
             if (alumno.nombre == "") errorMessage.Add("VER_02");
@@ -27,18 +27,18 @@ namespace BLL
             if (alumno.direccion == "") errorMessage.Add("VER_06");
         }
 
-        public void CheckDNI(string dni)
+        private void CheckDNI(string dni)
         {
             Regex regex = new Regex(@"^[0-9]*$");
             if (!regex.IsMatch(dni) && dni != "") errorMessage.Add("VER_07");
         }
-        public void CheckEmail(string email)
+        private void CheckEmail(string email)
         {
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             if (!regex.IsMatch(email) && email != "") errorMessage.Add("VER_08");
         }
 
-        public void CheckFecha(string fecha)
+        private void CheckFecha(string fecha)
         {
             Regex regex = new Regex(@"^([0]?[0-9]|[12][0-9]|[3][01])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$");
             if (!regex.IsMatch(fecha) && fecha != "") errorMessage.Add("VER_09");

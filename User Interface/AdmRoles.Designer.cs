@@ -31,17 +31,17 @@
             this.clbChildren = new System.Windows.Forms.CheckedListBox();
             this.lbRoles = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.lbTipo = new System.Windows.Forms.Label();
+            this.lbHijos = new System.Windows.Forms.Label();
+            this.gbData = new System.Windows.Forms.GroupBox();
             this.cbTipo = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.gbData.SuspendLayout();
             this.SuspendLayout();
             // 
             // clbChildren
@@ -70,14 +70,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Roles";
             // 
-            // label2
+            // lbNombre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nombre";
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Location = new System.Drawing.Point(6, 16);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(44, 13);
+            this.lbNombre.TabIndex = 3;
+            this.lbNombre.Tag = "LB_04";
+            this.lbNombre.Text = "Nombre";
             // 
             // tbName
             // 
@@ -86,82 +87,45 @@
             this.tbName.Size = new System.Drawing.Size(292, 20);
             this.tbName.TabIndex = 4;
             // 
-            // label3
+            // lbTipo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Tipo";
+            this.lbTipo.AutoSize = true;
+            this.lbTipo.Location = new System.Drawing.Point(6, 61);
+            this.lbTipo.Name = "lbTipo";
+            this.lbTipo.Size = new System.Drawing.Size(28, 13);
+            this.lbTipo.TabIndex = 5;
+            this.lbTipo.Tag = "LB_13";
+            this.lbTipo.Text = "Tipo";
             // 
-            // label5
+            // lbHijos
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Hijos";
+            this.lbHijos.AutoSize = true;
+            this.lbHijos.Location = new System.Drawing.Point(6, 106);
+            this.lbHijos.Name = "lbHijos";
+            this.lbHijos.Size = new System.Drawing.Size(30, 13);
+            this.lbHijos.TabIndex = 7;
+            this.lbHijos.Tag = "LB_14";
+            this.lbHijos.Text = "Hijos";
             // 
-            // groupBox1
+            // gbData
             // 
-            this.groupBox1.Controls.Add(this.cbTipo);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.clbChildren);
-            this.groupBox1.Controls.Add(this.tbName);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(153, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(314, 293);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos rol";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(226, 264);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Borrar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(117, 264);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Actualizar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(8, 264);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(12, 323);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Volver";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.gbData.Controls.Add(this.cbTipo);
+            this.gbData.Controls.Add(this.btnDelete);
+            this.gbData.Controls.Add(this.btnUpdate);
+            this.gbData.Controls.Add(this.lbNombre);
+            this.gbData.Controls.Add(this.btnCreate);
+            this.gbData.Controls.Add(this.lbHijos);
+            this.gbData.Controls.Add(this.clbChildren);
+            this.gbData.Controls.Add(this.tbName);
+            this.gbData.Controls.Add(this.lbTipo);
+            this.gbData.Location = new System.Drawing.Point(153, 12);
+            this.gbData.Name = "gbData";
+            this.gbData.Size = new System.Drawing.Size(314, 293);
+            this.gbData.TabIndex = 8;
+            this.gbData.TabStop = false;
+            this.gbData.Tag = "GB_05";
+            this.gbData.Text = "Datos rol";
+            this.gbData.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cbTipo
             // 
@@ -175,20 +139,65 @@
             this.cbTipo.TabIndex = 12;
             this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(226, 264);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Tag = "BTN_12";
+            this.btnDelete.Text = "Borrar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(117, 264);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.Tag = "BTN_11";
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(8, 264);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.TabIndex = 9;
+            this.btnCreate.Tag = "BTN_10";
+            this.btnCreate.Text = "Agregar";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(12, 323);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.Tag = "BTN_09";
+            this.btnBack.Text = "Volver";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.button4_Click);
+            // 
             // AdmRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 354);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.gbData);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbRoles);
             this.Name = "AdmRoles";
+            this.Tag = "BTN_03";
             this.Text = "AdmRoles";
             this.Load += new System.EventHandler(this.AdmRoles_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbData.ResumeLayout(false);
+            this.gbData.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,15 +208,15 @@
         private System.Windows.Forms.CheckedListBox clbChildren;
         private System.Windows.Forms.ListBox lbRoles;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lbTipo;
+        private System.Windows.Forms.Label lbHijos;
+        private System.Windows.Forms.GroupBox gbData;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.ComboBox cbTipo;
     }
 }

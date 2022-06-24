@@ -31,22 +31,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbName = new System.Windows.Forms.Label();
             this.lbApellido = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbLastname = new System.Windows.Forms.Label();
             this.lbFechaN = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbBdate = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbMail = new System.Windows.Forms.Label();
             this.lbDir = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lbAddress = new System.Windows.Forms.Label();
             this.lbDni = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lbFechaA = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbRdate = new System.Windows.Forms.Label();
+            this.gbDatos = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.gbDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,14 +78,15 @@
             this.lbNombre.TabIndex = 3;
             this.lbNombre.Text = "label3";
             // 
-            // label4
+            // lbName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 219);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Nombre:";
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(6, 219);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(47, 13);
+            this.lbName.TabIndex = 2;
+            this.lbName.Tag = "LB_07";
+            this.lbName.Text = "Nombre:";
             // 
             // lbApellido
             // 
@@ -95,14 +97,15 @@
             this.lbApellido.TabIndex = 5;
             this.lbApellido.Text = "label5";
             // 
-            // label6
+            // lbLastname
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 248);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Apellido:";
+            this.lbLastname.AutoSize = true;
+            this.lbLastname.Location = new System.Drawing.Point(6, 248);
+            this.lbLastname.Name = "lbLastname";
+            this.lbLastname.Size = new System.Drawing.Size(47, 13);
+            this.lbLastname.TabIndex = 4;
+            this.lbLastname.Tag = "LB_08";
+            this.lbLastname.Text = "Apellido:";
             // 
             // lbFechaN
             // 
@@ -113,14 +116,15 @@
             this.lbFechaN.TabIndex = 7;
             this.lbFechaN.Text = "label7";
             // 
-            // label8
+            // lbBdate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 277);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Fecha de nacimiento:";
+            this.lbBdate.AutoSize = true;
+            this.lbBdate.Location = new System.Drawing.Point(6, 277);
+            this.lbBdate.Name = "lbBdate";
+            this.lbBdate.Size = new System.Drawing.Size(109, 13);
+            this.lbBdate.TabIndex = 6;
+            this.lbBdate.Tag = "LB_09";
+            this.lbBdate.Text = "Fecha de nacimiento:";
             // 
             // lbEmail
             // 
@@ -131,14 +135,15 @@
             this.lbEmail.TabIndex = 9;
             this.lbEmail.Text = "label9";
             // 
-            // label10
+            // lbMail
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 306);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Email:";
+            this.lbMail.AutoSize = true;
+            this.lbMail.Location = new System.Drawing.Point(6, 306);
+            this.lbMail.Name = "lbMail";
+            this.lbMail.Size = new System.Drawing.Size(35, 13);
+            this.lbMail.TabIndex = 8;
+            this.lbMail.Tag = "LB_10";
+            this.lbMail.Text = "Email:";
             // 
             // lbDir
             // 
@@ -149,14 +154,15 @@
             this.lbDir.TabIndex = 11;
             this.lbDir.Text = "label11";
             // 
-            // label12
+            // lbAddress
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 335);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 13);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Dirección:";
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Location = new System.Drawing.Point(6, 335);
+            this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(55, 13);
+            this.lbAddress.TabIndex = 10;
+            this.lbAddress.Tag = "LB_11";
+            this.lbAddress.Text = "Dirección:";
             // 
             // lbDni
             // 
@@ -185,40 +191,42 @@
             this.lbFechaA.TabIndex = 15;
             this.lbFechaA.Text = "label15";
             // 
-            // label16
+            // lbRdate
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 393);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(75, 13);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "Fecha de alta:";
+            this.lbRdate.AutoSize = true;
+            this.lbRdate.Location = new System.Drawing.Point(6, 393);
+            this.lbRdate.Name = "lbRdate";
+            this.lbRdate.Size = new System.Drawing.Size(75, 13);
+            this.lbRdate.TabIndex = 14;
+            this.lbRdate.Tag = "LB_12";
+            this.lbRdate.Text = "Fecha de alta:";
             // 
-            // groupBox1
+            // gbDatos
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.lbId);
-            this.groupBox1.Controls.Add(this.lbFechaA);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.lbDni);
-            this.groupBox1.Controls.Add(this.lbNombre);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.lbDir);
-            this.groupBox1.Controls.Add(this.lbApellido);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.lbEmail);
-            this.groupBox1.Controls.Add(this.lbFechaN);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(491, 419);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Alumno";
+            this.gbDatos.Controls.Add(this.pictureBox1);
+            this.gbDatos.Controls.Add(this.lbId);
+            this.gbDatos.Controls.Add(this.lbFechaA);
+            this.gbDatos.Controls.Add(this.label1);
+            this.gbDatos.Controls.Add(this.lbRdate);
+            this.gbDatos.Controls.Add(this.lbName);
+            this.gbDatos.Controls.Add(this.lbDni);
+            this.gbDatos.Controls.Add(this.lbNombre);
+            this.gbDatos.Controls.Add(this.label14);
+            this.gbDatos.Controls.Add(this.lbLastname);
+            this.gbDatos.Controls.Add(this.lbDir);
+            this.gbDatos.Controls.Add(this.lbApellido);
+            this.gbDatos.Controls.Add(this.lbAddress);
+            this.gbDatos.Controls.Add(this.lbBdate);
+            this.gbDatos.Controls.Add(this.lbEmail);
+            this.gbDatos.Controls.Add(this.lbFechaN);
+            this.gbDatos.Controls.Add(this.lbMail);
+            this.gbDatos.Location = new System.Drawing.Point(12, 12);
+            this.gbDatos.Name = "gbDatos";
+            this.gbDatos.Size = new System.Drawing.Size(491, 419);
+            this.gbDatos.TabIndex = 16;
+            this.gbDatos.TabStop = false;
+            this.gbDatos.Tag = "GB_04";
+            this.gbDatos.Text = "Datos Alumno";
             // 
             // pictureBox1
             // 
@@ -230,17 +238,30 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(12, 437);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(94, 23);
+            this.btnBack.TabIndex = 17;
+            this.btnBack.Tag = "BTN_09";
+            this.btnBack.Text = "button1";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DatosAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 443);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(514, 473);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.gbDatos);
             this.Name = "DatosAlumno";
+            this.Tag = "GB_04";
             this.Text = "DatosAlumno";
             this.Load += new System.EventHandler(this.DatosAlumno_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbDatos.ResumeLayout(false);
+            this.gbDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -251,20 +272,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbApellido;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbLastname;
         private System.Windows.Forms.Label lbFechaN;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbBdate;
         private System.Windows.Forms.Label lbEmail;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbMail;
         private System.Windows.Forms.Label lbDir;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Label lbDni;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lbFechaA;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbRdate;
+        private System.Windows.Forms.GroupBox gbDatos;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

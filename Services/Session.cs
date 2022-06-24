@@ -4,10 +4,11 @@
     {
         private Session() { }
         public static User user { get; set; }
-
         public static Idioma idioma { get; set; }
 
         private static Session instance;
+
+        public static string selectedIdioma { get; set; }
 
         public static Session GetInstance()
         {

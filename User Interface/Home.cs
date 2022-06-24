@@ -14,6 +14,11 @@ namespace User_Interface
             this.controlesList.Add(button2);
             this.controlesList.Add(button3);
             this.controlesList.Add(groupBox1);
+            this.controlesList.Add(btnAlta);
+            this.controlesList.Add(btnCursos);
+            this.controlesList.Add(btnVerDatos);
+            this.controlesList.Add(gbEA);
+            this.controlesList.Add(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,26 +33,22 @@ namespace User_Interface
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //var idiomaMngr = new IdiomaManager();
-            //idiomaMngr.cambiarIdioma("ENG", this);
             this.actualizarTextos();
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Session.selectedIdioma = comboBox1.SelectedItem.ToString();
             var idiomaMngr = new IdiomaManager();
-            idiomaMngr.cambiarIdioma(comboBox1.SelectedItem.ToString(), this);
+            idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Session.user.rol.tienePermiso("ADM_01"))
+            if (Session.user.rol.tienePermiso("ADM01"))
             {
-                this.Hide();
                 var admUsuariosForm = new AdmUsuarios();
                 admUsuariosForm.ShowDialog();
-                this.Close();
             }
             else
             {
@@ -57,12 +58,10 @@ namespace User_Interface
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (Session.user.rol.tienePermiso("ADM_01"))
+            if (Session.user.rol.tienePermiso("ADM02"))
             {
-                this.Hide();
                 var admRolesForm = new AdmRoles();
                 admRolesForm.ShowDialog();
-                this.Close();
             }
             else
             {
@@ -72,40 +71,61 @@ namespace User_Interface
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var alumnoMngr = new AlumnoManager();
-            var alumno = alumnoMngr.verificarDatos(tbDniVerificar.Text);
+            if (Session.user.rol.tienePermiso("EA01"))
+            {
+                var alumnoMngr = new AlumnoManager();
+                var alumno = alumnoMngr.verificarDatos(tbDniVerificar.Text);
 
-            if (alumno == null)
+                if (alumno == null)
+                {
+                    MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_03".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    var datosAlumno = new DatosAlumno(alumno);
+                    datosAlumno.ShowDialog();
+                }
+            }
+            else
             {
-                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_03".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else
-            {
-                var datosAlumno = new DatosAlumno(alumno);
-                datosAlumno.ShowDialog();
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_01".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var altaAlumno = new AltaAlumno();
-            altaAlumno.ShowDialog();
-            this.Close();
+            if (Session.user.rol.tienePermiso("EA02"))
+            {
+                var altaAlumno = new AltaAlumno();
+                altaAlumno.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_01".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var alumnoMngr = new AlumnoManager();
-            var alumno = alumnoMngr.verificarDatos(tbDniVerificar.Text);
-
-            if (alumno == null)
+            if (Session.user.rol.tienePermiso("EA03"))
             {
-                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_03".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var alumnoMngr = new AlumnoManager();
+                var alumno = alumnoMngr.verificarDatos(tbDniVerificar.Text);
+
+                if (alumno == null)
+                {
+                    MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_03".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    var admCusos = new AdmCursos(alumno);
+                    admCusos.ShowDialog();
+                }
             }
             else
             {
-                var admCusos = new AdmCursos(alumno);
-                admCusos.ShowDialog();
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_01".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using BLL;
 using Services;
 
@@ -30,6 +31,21 @@ namespace User_Interface
             roles = rolMngr.GetFamilias();
             refreshRolesList();
 
+            this.controlesList.Add(btnBack);
+            this.controlesList.Add(btnBorrar);
+            this.controlesList.Add(btnCreate);
+            this.controlesList.Add(btnUpdate);
+            this.controlesList.Add(btDesbloqueo);
+            this.controlesList.Add(lbPass);
+            this.controlesList.Add(lbName);
+            this.controlesList.Add(lbBloqueo);
+            this.controlesList.Add(lbRol);
+            this.controlesList.Add(gbDatos);
+            this.controlesList.Add(this);
+
+            var idiomaMngr = new IdiomaManager();
+            idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
+
         }
 
         private void refreshRolesList()
@@ -41,6 +57,31 @@ namespace User_Interface
             foreach (var rol in roles)
             {
                 cbRol.Items.Add(rol);
+            }
+        }
+
+        private void refreshTreeView(Familia familia)
+        {
+            treeView1.Nodes.Clear();
+            treeView1.Nodes.Add(familia.name);
+            foreach (var child in familia.patentes)
+            {
+                addChild(child, treeView1.Nodes[0]);
+            }
+        }
+
+        private void addChild(Rol rol, TreeNode node)
+        {
+            node.Nodes.Add(rol.name);
+            var index = node.Nodes.Count - 1;
+            if (rol.GetType().Name == "Familia")
+            {
+                var familia = (Familia)rol;
+
+                foreach (var child in familia.patentes)
+                {
+                    addChild(child, node.Nodes[index]);
+                }
             }
         }
 
@@ -81,12 +122,15 @@ namespace User_Interface
             selectedUser = (User)lbUsuarios.SelectedItem;
             refreshRolesList();
             refreshDatosUsuario();
+            refreshTreeView((Familia)selectedUser.rol);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            userMngr.addUser(new User() {id = Guid.NewGuid().ToString(), rol = (Rol)cbRol.SelectedItem, name = tbName.Text, password = CryptographyHelper.hash(tbPass.Text), intentosLogin = 0 });
+            var newUser = new User() { id = Guid.NewGuid().ToString(), rol = (Rol)cbRol.SelectedItem, name = tbName.Text, password = CryptographyHelper.hash(tbPass.Text), intentosLogin = 0 };
+            userMngr.addUser(newUser);
             refreshUserList();
+            refreshTreeView((Familia)newUser.rol);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -97,8 +141,10 @@ namespace User_Interface
 
         private void button2_Click(object sender, EventArgs e)
         {
-            userMngr.updateUser(new User() { id = selectedUser.id, rol = (Rol)cbRol.SelectedItem, name = tbName.Text, password = tbPass.Text == "" ? selectedUser.password :  CryptographyHelper.hash(tbPass.Text) , intentosLogin = 0 });
+            var newUser = new User() { id = selectedUser.id, rol = (Rol)cbRol.SelectedItem, name = tbName.Text, password = tbPass.Text == "" ? selectedUser.password : CryptographyHelper.hash(tbPass.Text), intentosLogin = 0 };
+            userMngr.updateUser(newUser);
             refreshUserList();
+            refreshTreeView((Familia)newUser.rol);
         }
 
         private void AdmUsuarios_Load(object sender, EventArgs e)
@@ -122,8 +168,6 @@ namespace User_Interface
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var form1 = new Home();
-            form1.ShowDialog();
             this.Close();
         }
     }
