@@ -43,7 +43,8 @@ namespace User_Interface
             this.controlesList.Add(lbPass);
             this.controlesList.Add(lbUser);
             this.controlesList.Add(btnLogIn);
-            Session.selectedIdioma = "ENG";
+            comboBox1.SelectedIndex = Session.selected;
+            Session.selectedIdioma = comboBox1.SelectedItem.ToString();
             var idiomaMngr = new IdiomaManager();
             idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
         }
@@ -51,6 +52,7 @@ namespace User_Interface
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session.selectedIdioma = comboBox1.SelectedItem.ToString();
+            Session.selected = comboBox1.SelectedIndex;
             var idiomaMngr = new IdiomaManager();
             idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
         }

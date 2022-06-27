@@ -5,7 +5,7 @@
         private Session() { }
         public static User user { get; set; }
         public static Idioma idioma { get; set; }
-
+        public static int selected = 0;
         private static Session instance;
 
         public static string selectedIdioma { get; set; }

@@ -34,11 +34,13 @@ namespace User_Interface
         private void Form1_Load(object sender, EventArgs e)
         {
             this.actualizarTextos();
+            comboBox1.SelectedIndex = Session.selected;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session.selectedIdioma = comboBox1.SelectedItem.ToString();
+            Session.selected = comboBox1.SelectedIndex;
             var idiomaMngr = new IdiomaManager();
             idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
         }
