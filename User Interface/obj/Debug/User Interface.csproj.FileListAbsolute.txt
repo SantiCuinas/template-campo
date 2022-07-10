@@ -42,3 +42,5 @@ Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmRoles.res
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.DatosAlumno.resources
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AltaAlumno.resources
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmCursos.resources
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmIdioma.resources
+Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmTextos.resources

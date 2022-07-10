@@ -52,11 +52,23 @@
     <Compile Include="AdmCursos.Designer.cs">
       <DependentUpon>AdmCursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdmIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmIdioma.Designer.cs">
+      <DependentUpon>AdmIdioma.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdmRoles.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdmRoles.Designer.cs">
       <DependentUpon>AdmRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmTextos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmTextos.Designer.cs">
+      <DependentUpon>AdmTextos.cs</DependentUpon>
     </Compile>
     <Compile Include="AdmUsuarios.cs">
       <SubType>Form</SubType>
@@ -93,8 +105,14 @@
     <EmbeddedResource Include="AdmCursos.resx">
       <DependentUpon>AdmCursos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdmIdioma.resx">
+      <DependentUpon>AdmIdioma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdmRoles.resx">
       <DependentUpon>AdmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmTextos.resx">
+      <DependentUpon>AdmTextos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdmUsuarios.resx">
       <DependentUpon>AdmUsuarios.cs</DependentUpon>

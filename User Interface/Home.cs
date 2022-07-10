@@ -13,12 +13,17 @@ namespace User_Interface
             this.controlesList.Add(button1);
             this.controlesList.Add(button2);
             this.controlesList.Add(button3);
+            this.controlesList.Add(button4);
             this.controlesList.Add(groupBox1);
             this.controlesList.Add(btnAlta);
             this.controlesList.Add(btnCursos);
             this.controlesList.Add(btnVerDatos);
             this.controlesList.Add(gbEA);
             this.controlesList.Add(this);
+
+
+            comboBox1.DisplayMember = "nombre";
+            comboBox1.ValueMember = "id";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,12 +39,20 @@ namespace User_Interface
         private void Form1_Load(object sender, EventArgs e)
         {
             this.actualizarTextos();
+            var idiomaMngr = new IdiomaManager();
+            var idiomas = idiomaMngr.getIdiomas();
+            foreach (var idioma in idiomas)
+            {
+                comboBox1.Items.Add(idioma);
+            }
             comboBox1.SelectedIndex = Session.selected;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session.selectedIdioma = comboBox1.SelectedItem.ToString();
+            var selected = (Idioma)comboBox1.SelectedItem;
+
+            Session.selectedIdioma = selected.id;
             Session.selected = comboBox1.SelectedIndex;
             var idiomaMngr = new IdiomaManager();
             idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
@@ -129,6 +142,12 @@ namespace User_Interface
             {
                 MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_01".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            var admIdiomasForm = new AdmIdioma();
+            admIdiomasForm.ShowDialog();
         }
     }
 }

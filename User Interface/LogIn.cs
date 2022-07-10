@@ -13,6 +13,9 @@ namespace User_Interface
         {
             InitializeComponent();
             logManager = new LogManager();
+
+            comboBox1.DisplayMember = "nombre";
+            comboBox1.ValueMember = "id";
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -43,15 +46,23 @@ namespace User_Interface
             this.controlesList.Add(lbPass);
             this.controlesList.Add(lbUser);
             this.controlesList.Add(btnLogIn);
-            comboBox1.SelectedIndex = Session.selected;
-            Session.selectedIdioma = comboBox1.SelectedItem.ToString();
             var idiomaMngr = new IdiomaManager();
+            var idiomas = idiomaMngr.getIdiomas();
+            foreach (var idioma in idiomas)
+            {
+                comboBox1.Items.Add(idioma);
+            }
+            comboBox1.SelectedIndex = Session.selected;
+            var selected = (Idioma)comboBox1.SelectedItem;
+            Session.selectedIdioma = selected.id;
+            var x = Session.GetInstance();
             idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session.selectedIdioma = comboBox1.SelectedItem.ToString();
+            var selected = (Idioma)comboBox1.SelectedItem;
+            Session.selectedIdioma = selected.id;
             Session.selected = comboBox1.SelectedIndex;
             var idiomaMngr = new IdiomaManager();
             idiomaMngr.cambiarIdioma(Session.selectedIdioma, this);
