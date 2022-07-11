@@ -19,7 +19,7 @@ namespace User_Interface
             userMngr = new UserManager();
             rolMngr = new RolManager();
 
-            lbRoles.DisplayMember = "name";
+            lbRoles.DisplayMember = "idName";
             lbRoles.ValueMember = "id";
 
             clbChildren.DisplayMember = "name";
@@ -45,8 +45,11 @@ namespace User_Interface
             lbRoles.Items.Clear();
             foreach (var rol in roles)
             {
+                if (!userMngr.CheckUser(rol.id))
+                {
+                    clbChildren.Items.Add(rol);
+                }
                 lbRoles.Items.Add(rol);
-                clbChildren.Items.Add(rol);
             }
         }
 
@@ -56,7 +59,7 @@ namespace User_Interface
             var index = 0;
             foreach (var rol in roles)
             {
-                if (rol.id != selectedRol?.id)
+                if (rol.id != selectedRol?.id && userMngr.CheckUser(rol.id) == false)
                 {
                     clbChildren.Items.Add(rol);
 
@@ -101,9 +104,16 @@ namespace User_Interface
 
         private void button3_Click(object sender, EventArgs e)
         {
-            rolMngr.deleteRol(selectedRol);
-            refreshRolesList();
-            refreshDatosRol();
+            if (userMngr.CheckUser(selectedRol.id))
+            {
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_05".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                rolMngr.deleteRol(selectedRol);
+                refreshRolesList();
+                refreshDatosRol();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

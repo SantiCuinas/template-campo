@@ -8,10 +8,15 @@ namespace DAL
     {
         public List<User> Select(string username)
         {
-            var conn = this.conn;
-            var queryString = string.Format("SELECT * FROM users WHERE name = '{0}'", username);
 
+            var conn = this.conn;
+
+            var queryString = "SELECT * FROM users WHERE name = @Name";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Name", username);
+            query.Parameters.Add(param[0]);
+
             conn.Open();
             var data = query.ExecuteReader();
             List<User> usuarios = new List<User>();
@@ -54,48 +59,101 @@ namespace DAL
             return usuarios;
         }
 
+        public bool CheckIfUserExists(string id)
+        {
+
+            var conn = this.conn;
+
+            var queryString = "SELECT * FROM users WHERE id = @Id";
+            SqlParameter[] param = new SqlParameter[1];
+            var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Id", id);
+            query.Parameters.Add(param[0]);
+
+            conn.Open();
+            var data = query.ExecuteReader();
+
+            var respnse = data.HasRows;
+            conn.Close();
+            return respnse;
+        }
+
         public void actualizarIntentos(string username, int intentos)
         {
             var conn = this.conn;
-            var queryString = string.Format("UPDATE users SET [intentos] ={0} where name = '{1}';", intentos, username);
-
+            var queryString = "UPDATE users SET [intentos] = @Intentos where name = @Name";
+            SqlParameter[] param = new SqlParameter[2];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Intentos", intentos);
+            param[1] = new SqlParameter("@Name", username);
+            query.Parameters.Add(param[0]);
+            query.Parameters.Add(param[1]);
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();
 
         }
 
-        public void AddUser(User user)
+        public void AddUser(User user, Rol rol)
         {
             var conn = this.conn;
-            var queryString = string.Format("INSERT INTO users (id, name, password, intentos, rol) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}');", user.id, user.name, user.password, user.intentosLogin, user.rol.id);
 
+            var queryString = "INSERT INTO users (id, name, password, intentos, rol) VALUES (@Id, @Name, @Password, @Intentos, @Rol)";
+            SqlParameter[] param = new SqlParameter[5];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Id", user.id);
+            param[1] = new SqlParameter("@Name", user.name);
+            param[2] = new SqlParameter("@Password", user.password);
+            param[3] = new SqlParameter("@Intentos", user.intentosLogin);
+            param[4] = new SqlParameter("@Rol", user.id);
+
+            query.Parameters.Add(param[0]);
+            query.Parameters.Add(param[1]);
+            query.Parameters.Add(param[2]);
+            query.Parameters.Add(param[3]);
+            query.Parameters.Add(param[4]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();
 
+            var rolDao = new RolDAO();
+            rolDao.AddRol(rol);
         }
 
-        public void DeleteUser(string userId)
+        public void DeleteUser(string userId, Rol rol)
         {
             var conn = this.conn;
-            var queryString = string.Format("DELETE FROM users WHERE id = '{0}';", userId);
-
+            var queryString = "DELETE FROM users WHERE id = @Id";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Id", userId);
+            query.Parameters.Add(param[0]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();
 
+            var rolDao = new RolDAO();
+            rolDao.DeleteRol(rol);
         }
 
         public void UpdateUser(User user)
         {
             var conn = this.conn;
-            var queryString = string.Format("UPDATE users SET name = '{0}', password = '{1}', intentos = '{2}', rol = '{3}' WHERE id = '{4}';", user.name, user.password, user.intentosLogin, user.rol.id, user.id);
-
+            var queryString = "UPDATE users SET name = @Name, password = @Password, intentos = @Intentos WHERE id = @Id";
+            SqlParameter[] param = new SqlParameter[5];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Name", user.name);
+            param[1] = new SqlParameter("@Password", user.password);
+            param[2] = new SqlParameter("@Intentos", user.intentosLogin);
+            param[3] = new SqlParameter("@Id", user.id);
+
+            query.Parameters.Add(param[0]);
+            query.Parameters.Add(param[1]);
+            query.Parameters.Add(param[2]);
+            query.Parameters.Add(param[3]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();

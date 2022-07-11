@@ -21,16 +21,22 @@ namespace BLL
             return UserDao.SelectAll();
         }
 
-        public void addUser(User user)
+        public bool CheckUser(string id)
         {
             var UserDao = new UserDAO();
-            UserDao.AddUser(user);
+            return UserDao.CheckIfUserExists(id);
         }
 
-        public void deleteUser(string userId)
+        public void addUser(User user, Rol rol)
         {
             var UserDao = new UserDAO();
-            UserDao.DeleteUser(userId);
+            UserDao.AddUser(user, rol);
+        }
+
+        public void deleteUser(string userId, Rol rol)
+        {
+            var UserDao = new UserDAO();
+            UserDao.DeleteUser(userId, rol);
         }
 
         public void updateUser(User user)

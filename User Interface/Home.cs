@@ -146,8 +146,15 @@ namespace User_Interface
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            var admIdiomasForm = new AdmIdioma();
-            admIdiomasForm.ShowDialog();
+            if (Session.user.rol.tienePermiso("ADM03"))
+            {
+                var admIdiomasForm = new AdmIdioma();
+                admIdiomasForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_01".ToString())?.texto, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

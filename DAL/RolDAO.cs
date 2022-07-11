@@ -11,9 +11,12 @@ namespace DAL
             var listRol = new List<Rol>();
             var conn = new SqlConnection(this.connectionString);
 
-            var queryString = string.Format("SELECT * FROM familia_patente WHERE id_familia = '{0}'", familiaId);
-
+            var queryString = "SELECT * FROM familia_patente WHERE id_familia = @IdFamilia";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@IdFamilia", familiaId);
+            query.Parameters.Add(param[0]);
+
             conn.Open();
             var data = query.ExecuteReader();
             if (data.HasRows)
@@ -70,9 +73,13 @@ namespace DAL
         public Familia getFamilia(string familiaId)
         {
             var conn = new SqlConnection(this.connectionString);
-            var queryString = string.Format("SELECT * FROM familia WHERE id = '{0}'", familiaId);
+            var queryString = "SELECT * FROM familia WHERE id = @FamiliaId";
 
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@FamiliaId", familiaId);
+            query.Parameters.Add(param[0]);
+
             Familia familia = new Familia();
 
             conn.Open();
@@ -91,8 +98,12 @@ namespace DAL
         {
             var conn = new SqlConnection(this.connectionString);
 
-            var queryString = string.Format("SELECT * FROM patente WHERE id = '{0}'", patenteId);
+            var queryString = "SELECT * FROM patente WHERE id = @PatenteId";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@PatenteId", patenteId);
+            query.Parameters.Add(param[0]);
+
             Patente patente = new Patente();
             conn.Open();
             var data = query.ExecuteReader();
@@ -131,9 +142,16 @@ namespace DAL
         public void AddRol(Rol rol)
         {
             var conn = this.conn;
-            var queryString = string.Format("INSERT INTO {0} (id, nombre) VALUES ('{1}', '{2}');", rol.GetType().Name == "Familia" ? "familia" : "patente", rol.id, rol.name);
 
+            var queryString = string.Format("INSERT INTO {0} (id, nombre) VALUES (@Id, @Name);", rol.GetType().Name == "Familia" ? "familia" : "patente");
+            SqlParameter[] param = new SqlParameter[2];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Id", rol.id);
+            param[1] = new SqlParameter("@Name", rol.name);
+
+            query.Parameters.Add(param[0]);
+            query.Parameters.Add(param[1]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();
@@ -143,7 +161,7 @@ namespace DAL
                 var familia = (Familia)rol;
                 foreach (var child in familia.patentes)
                 {
-                    queryString = string.Format("INSERT INTO familia_patente (id_familia, id_hijo, tipo) VALUES ('{0}', '{1}', '{2}');",familia.id, child.id, child.GetType().Name == "Familia" ? "familia" : "patente");
+                    queryString = string.Format("INSERT INTO familia_patente (id_familia, id_hijo, tipo) VALUES ('{0}', '{1}', '{2}');", familia.id, child.id, child.GetType().Name == "Familia" ? "familia" : "patente");
 
                     query = new SqlCommand(queryString, conn);
                     conn.Open();
@@ -157,16 +175,24 @@ namespace DAL
         public void DeleteRol(Rol rol)
         {
             var conn = this.conn;
-            var queryString = string.Format("DELETE FROM {0} WHERE id = '{1}';", rol.GetType().Name == "Familia" ? "familia" : "patente",  rol.id);
+            var queryString = string.Format("DELETE FROM {0} WHERE id = @Id;", rol.GetType().Name == "Familia" ? "familia" : "patente");
+            SqlParameter[] param = new SqlParameter[2];
 
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Id", rol.id);
+            param[1] = new SqlParameter("@Id", rol.id);
+
+            query.Parameters.Add(param[0]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();
 
-            queryString = string.Format("DELETE FROM familia_patente WHERE id_familia = '{0}';", rol.id);
+            queryString = "DELETE FROM familia_patente WHERE id_familia = @Id;";
 
             query = new SqlCommand(queryString, conn);
+            query.Parameters.Add(param[1]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();

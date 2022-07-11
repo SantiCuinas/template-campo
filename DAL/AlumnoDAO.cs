@@ -9,8 +9,11 @@ namespace DAL
         {
             var conn = new SqlConnection(this.connectionString);
             CursoDAO cursoDAO = new CursoDAO();
-            var queryString = string.Format("SELECT * FROM alumno WHERE dni = '{0}'", dni);
+            var queryString = "SELECT * FROM alumno WHERE dni = @DNI";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@DNI", dni);
+            query.Parameters.Add(param[0]);
             Alumno alumno = new Alumno();
             conn.Open();
             var data = query.ExecuteReader();
@@ -27,13 +30,31 @@ namespace DAL
         public void addAlumno(Alumno alumno)
         {
             var conn = this.conn;
-            var queryString = string.Format("INSERT INTO alumno (id, nombre, apellido, fecha_nacimiento, email, direccion, fecha_alta, dni) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}' );", alumno.id, alumno.nombre, alumno.apellido, alumno.fecha_nacimiento, alumno.email, alumno.direccion, alumno.fecha_alta, alumno.dni);
+            var queryString = "INSERT INTO alumno (id, nombre, apellido, fecha_nacimiento, email, direccion, fecha_alta, dni) VALUES (@Id, @Nombre, @Apellido, @FechaNacimiento, @Email, @Direccion, @FechaAlta, @DNI );";
+            SqlParameter[] param = new SqlParameter[8];
 
-            var query = new SqlCommand(queryString, conn);
+           var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Id", alumno.id);
+            param[1] = new SqlParameter("@Nombre", alumno.nombre);
+            param[2] = new SqlParameter("@Apellido", alumno.apellido);
+            param[3] = new SqlParameter("@FechaNacimiento", alumno.fecha_nacimiento);
+            param[4] = new SqlParameter("@Email", alumno.email);
+            param[5] = new SqlParameter("@Direccion", alumno.direccion);
+            param[6] = new SqlParameter("@FechaAlta", alumno.fecha_alta);
+            param[7] = new SqlParameter("@DNI", alumno.dni);
+
+            query.Parameters.Add(param[0]);
+            query.Parameters.Add(param[1]);
+            query.Parameters.Add(param[2]);
+            query.Parameters.Add(param[3]);
+            query.Parameters.Add(param[4]);
+            query.Parameters.Add(param[5]);
+            query.Parameters.Add(param[6]);
+            query.Parameters.Add(param[7]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();
-
         }
     }
 }

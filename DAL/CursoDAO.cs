@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿    using System.Collections.Generic;
 using System.Data.SqlClient;
 using BE;
 
@@ -9,8 +9,12 @@ namespace DAL
         public List<Curso> getCursosForStudent(string id)
         {
             var conn = new SqlConnection(this.connectionString);
-            var queryString = string.Format("SELECT * FROM curso_alumno WHERE alumno_id = '{0}'", id);
+            var queryString = "SELECT * FROM curso_alumno WHERE alumno_id = @Id";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Id", id);
+            query.Parameters.Add(param[0]);
+
             List<Curso> cursoList = new List<Curso>();
             conn.Open();
             var data = query.ExecuteReader();
@@ -32,8 +36,11 @@ namespace DAL
         public Curso GetCurso(string cursoId)
         {
             var conn = new SqlConnection(this.connectionString);
-            var queryString = string.Format("SELECT * FROM curso WHERE id = '{0}'", cursoId);
+            var queryString = "SELECT * FROM curso WHERE id = @CursoId";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@CursoId", cursoId);
+            query.Parameters.Add(param[0]);
 
             Curso curso = null;
             conn.Open();

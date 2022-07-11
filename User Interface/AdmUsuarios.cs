@@ -21,15 +21,11 @@ namespace User_Interface
             lbUsuarios.DisplayMember = "name";
             lbUsuarios.ValueMember = "id";
 
-            cbRol.DisplayMember = "name";
-            cbRol.ValueMember = "id";
-
             userMngr = new UserManager();
             rolMngr = new RolManager();
 
             refreshUserList();
             roles = rolMngr.GetFamilias();
-            refreshRolesList();
 
             this.controlesList.Add(btnBack);
             this.controlesList.Add(btnBorrar);
@@ -39,7 +35,6 @@ namespace User_Interface
             this.controlesList.Add(lbPass);
             this.controlesList.Add(lbName);
             this.controlesList.Add(lbBloqueo);
-            this.controlesList.Add(lbRol);
             this.controlesList.Add(gbDatos);
             this.controlesList.Add(this);
 
@@ -48,17 +43,6 @@ namespace User_Interface
 
         }
 
-        private void refreshRolesList()
-        {
-            cbRol.Items.Clear();
-            cbRol.Items.Add(new Familia());
-            cbRol.SelectedIndex = 0;
-            cbRol.Items.Clear();
-            foreach (var rol in roles)
-            {
-                cbRol.Items.Add(rol);
-            }
-        }
 
         private void refreshTreeView(Familia familia)
         {
@@ -89,22 +73,22 @@ namespace User_Interface
         {
             lbId.Text = selectedUser?.id ?? "";
             tbName.Text = selectedUser?.name ?? "";
-            btDesbloqueo.Enabled = selectedUser.intentosLogin >= 3;
-            lbBloqueo.Visible = selectedUser.intentosLogin >= 3;
+            btDesbloqueo.Enabled = selectedUser?.intentosLogin >= 3;
+            lbBloqueo.Visible = selectedUser?.intentosLogin >= 3;
             int index = 0;
             bool foundFlag = false;
-            for (int i = 0; i < cbRol.Items.Count; i++)
-            {
-                var familia = (Familia)cbRol.Items[i];
-                if (familia.id == selectedUser?.rol?.id)
-                {
-                    index = i;
-                    foundFlag = true;
-                    break;
-                }
-            }
+            //for (int i = 0; i < cbRol.Items.Count; i++)
+            //{
+            //    var familia = (Familia)cbRol.Items[i];
+            //    if (familia.id == selectedUser?.rol?.id)
+            //    {
+            //        index = i;
+            //        foundFlag = true;
+            //        break;
+            //    }
+            //}
 
-            cbRol.SelectedIndex = foundFlag ? index : -1;
+            //cbRol.SelectedIndex = foundFlag ? index : -1;
         }
 
         private void refreshUserList()
@@ -119,29 +103,31 @@ namespace User_Interface
 
         private void lbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lbUsuarios.SelectedIndex = lbUsuarios.SelectedIndex == -1 ? 0 : lbUsuarios.SelectedIndex;
             selectedUser = (User)lbUsuarios.SelectedItem;
-            refreshRolesList();
             refreshDatosUsuario();
             refreshTreeView((Familia)selectedUser.rol);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var newUser = new User() { id = Guid.NewGuid().ToString(), rol = (Rol)cbRol.SelectedItem, name = tbName.Text, password = CryptographyHelper.hash(tbPass.Text), intentosLogin = 0 };
-            userMngr.addUser(newUser);
+            var newUser = new User() { id = Guid.NewGuid().ToString(), name = tbName.Text, password = CryptographyHelper.hash(tbPass.Text), intentosLogin = 0 };
+            var newRol = new Familia() { id = newUser.id, name = newUser.name };
+            newUser.rol = newRol;
+            userMngr.addUser(newUser, newRol);
             refreshUserList();
             refreshTreeView((Familia)newUser.rol);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            userMngr.deleteUser(lbId.Text);
+            userMngr.deleteUser(lbId.Text, selectedUser.rol);
             refreshUserList();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var newUser = new User() { id = selectedUser.id, rol = (Rol)cbRol.SelectedItem, name = tbName.Text, password = tbPass.Text == "" ? selectedUser.password : CryptographyHelper.hash(tbPass.Text), intentosLogin = 0 };
+            var newUser = new User() { id = selectedUser.id, rol = selectedUser.rol, name = tbName.Text, password = tbPass.Text == "" ? selectedUser.password : CryptographyHelper.hash(tbPass.Text), intentosLogin = 0 };
             userMngr.updateUser(newUser);
             refreshUserList();
             refreshTreeView((Familia)newUser.rol);

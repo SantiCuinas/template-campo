@@ -54,6 +54,7 @@ namespace User_Interface
         {
             idiomaMngr.updateTexto(selectedTexto.idioma_id, selectedTexto.id, textBox1.Text);
             updateList();
+            this.actualizarTextos();
         }
 
         private void button2_Click(object sender, EventArgs e)

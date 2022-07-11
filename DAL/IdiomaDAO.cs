@@ -9,9 +9,13 @@ namespace DAL
         private List<Texto> getTextos(string idiomaId)
         {
             var conn = this.conn;
-            var queryString = string.Format("SELECT * FROM texto WHERE idioma_id = '{0}'", idiomaId);
 
+            var queryString = "SELECT * FROM texto WHERE idioma_id = @IdiomaId";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@IdiomaId", idiomaId);
+            query.Parameters.Add(param[0]);
+
             conn.Open();
             var data = query.ExecuteReader();
             List<Texto> textos = new List<Texto>();
@@ -32,9 +36,13 @@ namespace DAL
         public Idioma getIdioma(string idiomaId)
         {
             var conn = new SqlConnection(this.connectionString);
-            var queryString = string.Format("SELECT * FROM idioma WHERE id = '{0}'", idiomaId);
 
+            var queryString = "SELECT * FROM idioma WHERE id = @IdiomaId";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@IdiomaId", idiomaId);
+            query.Parameters.Add(param[0]);
+
             Idioma idioma = new Idioma();
 
             conn.Open();
@@ -75,9 +83,16 @@ namespace DAL
         public void createIdioma (Idioma idioma)
         {
             var conn = this.conn;
-            var queryString = string.Format("INSERT INTO idioma (id, nombre) VALUES ('{0}', '{1}');", idioma.id, idioma.nombre);
 
+            var queryString = "INSERT INTO idioma (id, nombre) VALUES (@Id, @Nombre);";
+            SqlParameter[] param = new SqlParameter[2];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Id", idioma.id);
+            param[1] = new SqlParameter("@Nombre", idioma.nombre);
+
+            query.Parameters.Add(param[0]);
+            query.Parameters.Add(param[1]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();
@@ -87,9 +102,12 @@ namespace DAL
         public void populateTextos (string idiomaId)
         {
             var conn = this.conn;
-            var queryString = string.Format("INSERT INTO texto ( idioma_id, id, texto) SELECT '{0}', id, texto FROM texto WHERE idioma_id = 'ESP'; ", idiomaId);
-
+            var queryString = "INSERT INTO texto ( idioma_id, id, texto) SELECT @IdiomaId, id, texto FROM texto WHERE idioma_id = 'ESP'; ";
+            SqlParameter[] param = new SqlParameter[1];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@IdiomaId", idiomaId);
+            query.Parameters.Add(param[0]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();
@@ -98,13 +116,21 @@ namespace DAL
         public void updateTexto (string idiomaId, string textoId, string texto)
         {
             var conn = this.conn;
-            var queryString = string.Format("UPDATE texto SET [texto] = '{0}' where id = '{1}' and idioma_id = '{2}';", texto, textoId, idiomaId);
 
+            var queryString = "UPDATE texto SET [texto] = @Texto where id = @Id and idioma_id = @IdiomaId";
+            SqlParameter[] param = new SqlParameter[3];
             var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Texto", texto);
+            param[1] = new SqlParameter("@Id", textoId);
+            param[2] = new SqlParameter("@IdiomaId", idiomaId);
+
+            query.Parameters.Add(param[0]);
+            query.Parameters.Add(param[1]);
+            query.Parameters.Add(param[2]);
+
             conn.Open();
             query.ExecuteNonQuery();
             conn.Close();
-
         }
     }
 }

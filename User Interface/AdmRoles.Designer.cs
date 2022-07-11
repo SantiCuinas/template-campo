@@ -47,7 +47,7 @@
             // clbChildren
             // 
             this.clbChildren.FormattingEnabled = true;
-            this.clbChildren.Location = new System.Drawing.Point(9, 122);
+            this.clbChildren.Location = new System.Drawing.Point(84, 122);
             this.clbChildren.Name = "clbChildren";
             this.clbChildren.Size = new System.Drawing.Size(292, 94);
             this.clbChildren.TabIndex = 0;
@@ -57,7 +57,7 @@
             this.lbRoles.FormattingEnabled = true;
             this.lbRoles.Location = new System.Drawing.Point(12, 28);
             this.lbRoles.Name = "lbRoles";
-            this.lbRoles.Size = new System.Drawing.Size(120, 277);
+            this.lbRoles.Size = new System.Drawing.Size(457, 277);
             this.lbRoles.TabIndex = 1;
             this.lbRoles.SelectedIndexChanged += new System.EventHandler(this.lbRoles_SelectedIndexChanged);
             // 
@@ -73,7 +73,7 @@
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(6, 16);
+            this.lbNombre.Location = new System.Drawing.Point(81, 16);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(44, 13);
             this.lbNombre.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(9, 32);
+            this.tbName.Location = new System.Drawing.Point(84, 32);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(292, 20);
             this.tbName.TabIndex = 4;
@@ -90,7 +90,7 @@
             // lbTipo
             // 
             this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(6, 61);
+            this.lbTipo.Location = new System.Drawing.Point(81, 61);
             this.lbTipo.Name = "lbTipo";
             this.lbTipo.Size = new System.Drawing.Size(28, 13);
             this.lbTipo.TabIndex = 5;
@@ -100,7 +100,7 @@
             // lbHijos
             // 
             this.lbHijos.AutoSize = true;
-            this.lbHijos.Location = new System.Drawing.Point(6, 106);
+            this.lbHijos.Location = new System.Drawing.Point(81, 106);
             this.lbHijos.Name = "lbHijos";
             this.lbHijos.Size = new System.Drawing.Size(30, 13);
             this.lbHijos.TabIndex = 7;
@@ -118,9 +118,9 @@
             this.gbData.Controls.Add(this.clbChildren);
             this.gbData.Controls.Add(this.tbName);
             this.gbData.Controls.Add(this.lbTipo);
-            this.gbData.Location = new System.Drawing.Point(153, 12);
+            this.gbData.Location = new System.Drawing.Point(12, 311);
             this.gbData.Name = "gbData";
-            this.gbData.Size = new System.Drawing.Size(314, 293);
+            this.gbData.Size = new System.Drawing.Size(457, 293);
             this.gbData.TabIndex = 8;
             this.gbData.TabStop = false;
             this.gbData.Tag = "GB_05";
@@ -134,7 +134,7 @@
             this.cbTipo.Items.AddRange(new object[] {
             "familia",
             "patente"});
-            this.cbTipo.Location = new System.Drawing.Point(9, 77);
+            this.cbTipo.Location = new System.Drawing.Point(84, 77);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(121, 21);
             this.cbTipo.TabIndex = 12;
@@ -142,7 +142,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(226, 264);
+            this.btnDelete.Location = new System.Drawing.Point(301, 264);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 11;
@@ -153,7 +153,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(117, 264);
+            this.btnUpdate.Location = new System.Drawing.Point(192, 264);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 10;
@@ -164,7 +164,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(8, 264);
+            this.btnCreate.Location = new System.Drawing.Point(83, 264);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 9;
@@ -175,7 +175,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 323);
+            this.btnBack.Location = new System.Drawing.Point(12, 610);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 12;
@@ -188,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 354);
+            this.ClientSize = new System.Drawing.Size(481, 641);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.gbData);
             this.Controls.Add(this.label1);

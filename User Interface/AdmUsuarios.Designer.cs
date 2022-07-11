@@ -30,10 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
-            this.lbRol = new System.Windows.Forms.Label();
             this.lbId = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
-            this.cbRol = new System.Windows.Forms.ComboBox();
             this.gbDatos = new System.Windows.Forms.GroupBox();
             this.lbBloqueo = new System.Windows.Forms.Label();
             this.btDesbloqueo = new System.Windows.Forms.Button();
@@ -67,16 +65,6 @@
             this.lbName.Tag = "LB_04";
             this.lbName.Text = "Nombre";
             // 
-            // lbRol
-            // 
-            this.lbRol.AutoSize = true;
-            this.lbRol.Location = new System.Drawing.Point(6, 117);
-            this.lbRol.Name = "lbRol";
-            this.lbRol.Size = new System.Drawing.Size(23, 13);
-            this.lbRol.TabIndex = 2;
-            this.lbRol.Tag = "LB_06";
-            this.lbRol.Text = "Rol";
-            // 
             // lbId
             // 
             this.lbId.AutoSize = true;
@@ -92,15 +80,6 @@
             this.tbName.Size = new System.Drawing.Size(126, 20);
             this.tbName.TabIndex = 4;
             // 
-            // cbRol
-            // 
-            this.cbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRol.FormattingEnabled = true;
-            this.cbRol.Location = new System.Drawing.Point(6, 133);
-            this.cbRol.Name = "cbRol";
-            this.cbRol.Size = new System.Drawing.Size(126, 21);
-            this.cbRol.TabIndex = 5;
-            // 
             // gbDatos
             // 
             this.gbDatos.Controls.Add(this.lbBloqueo);
@@ -110,15 +89,13 @@
             this.gbDatos.Controls.Add(this.btnBorrar);
             this.gbDatos.Controls.Add(this.btnUpdate);
             this.gbDatos.Controls.Add(this.btnCreate);
-            this.gbDatos.Controls.Add(this.cbRol);
             this.gbDatos.Controls.Add(this.label1);
             this.gbDatos.Controls.Add(this.tbName);
             this.gbDatos.Controls.Add(this.lbName);
             this.gbDatos.Controls.Add(this.lbId);
-            this.gbDatos.Controls.Add(this.lbRol);
             this.gbDatos.Location = new System.Drawing.Point(199, 12);
             this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Size = new System.Drawing.Size(316, 251);
+            this.gbDatos.Size = new System.Drawing.Size(316, 238);
             this.gbDatos.TabIndex = 6;
             this.gbDatos.TabStop = false;
             this.gbDatos.Tag = "GB_03";
@@ -129,7 +106,7 @@
             // 
             this.lbBloqueo.AutoSize = true;
             this.lbBloqueo.ForeColor = System.Drawing.Color.Red;
-            this.lbBloqueo.Location = new System.Drawing.Point(9, 194);
+            this.lbBloqueo.Location = new System.Drawing.Point(6, 166);
             this.lbBloqueo.Name = "lbBloqueo";
             this.lbBloqueo.Size = new System.Drawing.Size(129, 13);
             this.lbBloqueo.TabIndex = 12;
@@ -140,9 +117,9 @@
             // btDesbloqueo
             // 
             this.btDesbloqueo.Enabled = false;
-            this.btDesbloqueo.Location = new System.Drawing.Point(170, 131);
+            this.btDesbloqueo.Location = new System.Drawing.Point(6, 131);
             this.btDesbloqueo.Name = "btDesbloqueo";
-            this.btDesbloqueo.Size = new System.Drawing.Size(123, 23);
+            this.btDesbloqueo.Size = new System.Drawing.Size(299, 23);
             this.btDesbloqueo.TabIndex = 11;
             this.btDesbloqueo.Tag = "BTN_13";
             this.btDesbloqueo.Text = "Desbloquear";
@@ -168,7 +145,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(230, 222);
+            this.btnBorrar.Location = new System.Drawing.Point(230, 195);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 8;
@@ -179,7 +156,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(121, 222);
+            this.btnUpdate.Location = new System.Drawing.Point(121, 195);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 7;
@@ -190,7 +167,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(12, 222);
+            this.btnCreate.Location = new System.Drawing.Point(12, 195);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 6;
@@ -204,13 +181,13 @@
             this.lbUsuarios.FormattingEnabled = true;
             this.lbUsuarios.Location = new System.Drawing.Point(12, 12);
             this.lbUsuarios.Name = "lbUsuarios";
-            this.lbUsuarios.Size = new System.Drawing.Size(181, 251);
+            this.lbUsuarios.Size = new System.Drawing.Size(181, 238);
             this.lbUsuarios.TabIndex = 7;
             this.lbUsuarios.SelectedIndexChanged += new System.EventHandler(this.lbUsuarios_SelectedIndexChanged);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 283);
+            this.btnBack.Location = new System.Drawing.Point(12, 256);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 9;
@@ -223,14 +200,14 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(521, 12);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(181, 251);
+            this.treeView1.Size = new System.Drawing.Size(181, 238);
             this.treeView1.TabIndex = 10;
             // 
             // AdmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 318);
+            this.ClientSize = new System.Drawing.Size(712, 291);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lbUsuarios);
@@ -249,10 +226,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Label lbRol;
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.ComboBox cbRol;
         private System.Windows.Forms.GroupBox gbDatos;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnUpdate;
