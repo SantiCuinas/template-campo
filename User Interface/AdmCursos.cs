@@ -57,6 +57,9 @@ namespace User_Interface
                 alumno.cursos.Add((Curso)curso);
             }
             cursoMngr.UpdateCursos(alumno);
+
+
+
             RefreshCursosList();
         }
 

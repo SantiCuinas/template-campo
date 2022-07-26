@@ -9,3 +9,9 @@ Y:\Sac\Repos\template-campo\BE\obj\Debug\BE.csproj.AssemblyReference.cache
 Y:\Sac\Repos\template-campo\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 Y:\Sac\Repos\template-campo\BE\obj\Debug\BE.dll
 Y:\Sac\Repos\template-campo\BE\obj\Debug\BE.pdb
+C:\Users\Santi\Desktop\Campo\template-campo\BE\bin\Debug\BE.dll
+C:\Users\Santi\Desktop\Campo\template-campo\BE\bin\Debug\BE.pdb
+C:\Users\Santi\Desktop\Campo\template-campo\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\Santi\Desktop\Campo\template-campo\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Santi\Desktop\Campo\template-campo\BE\obj\Debug\BE.dll
+C:\Users\Santi\Desktop\Campo\template-campo\BE\obj\Debug\BE.pdb

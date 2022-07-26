@@ -27,6 +27,28 @@ namespace DAL
             return alumno;
         }
 
+        public Alumno getAlumnoById(string id)
+        {
+            var conn = new SqlConnection(this.connectionString);
+            CursoDAO cursoDAO = new CursoDAO();
+            var queryString = "SELECT * FROM alumno WHERE id = @ID";
+            SqlParameter[] param = new SqlParameter[1];
+            var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@ID", id);
+            query.Parameters.Add(param[0]);
+            Alumno alumno = new Alumno();
+            conn.Open();
+            var data = query.ExecuteReader();
+            if (data.HasRows)
+            {
+                data.Read();
+                alumno = new Alumno() { nombre = data["nombre"].ToString(), id = data["id"].ToString(), apellido = data["apellido"].ToString(), fecha_nacimiento = data["fecha_nacimiento"].ToString(), email = data["email"].ToString(), direccion = data["direccion"].ToString(), fecha_alta = data["fecha_alta"].ToString(), dni = data["dni"].ToString(), cursos = cursoDAO.getCursosForStudent(data["id"].ToString()) };
+            }
+
+            conn.Close();
+            return alumno;
+        }
+
         public void addAlumno(Alumno alumno)
         {
             var conn = this.conn;

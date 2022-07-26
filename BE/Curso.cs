@@ -10,5 +10,7 @@ namespace BE
     {
         public string id { get; set; }
         public string nombre { get; set; }
+        public ListaInscriptos listaInscriptos { get; set; }
+        public Lista listaEspera { get; set; }
     }
 }

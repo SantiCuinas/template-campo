@@ -10,7 +10,7 @@
         {
             get
             {
-                return id + " - " + name;
+                return id.Substring(0, 5).Trim() + " - " + name;
             }
         }
     }

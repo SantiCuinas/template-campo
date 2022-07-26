@@ -17,5 +17,18 @@ namespace BLL
             CursoDAO cursoDAO = new CursoDAO();
             cursoDAO.UpdateCursos(alumno);
         }
+
+        public Curso AsignarAlumno(Alumno alumno, Curso curso)
+        {
+            if (curso.listaInscriptos.alumnos.Count >= curso.listaInscriptos.capacidad)
+            {
+                curso.listaEspera.alumnos.Add(alumno);
+            } else
+            {
+                curso.listaInscriptos.alumnos.Add(alumno);
+            }
+
+            return curso;
+        }
     }
 }

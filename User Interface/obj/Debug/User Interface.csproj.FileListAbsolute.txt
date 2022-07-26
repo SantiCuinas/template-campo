@@ -44,3 +44,31 @@ Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AltaAlumno.r
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmCursos.resources
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmIdioma.resources
 Y:\Sac\Repos\template-campo\User Interface\obj\Debug\User_Interface.AdmTextos.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\User Interface.exe.config
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\User Interface.exe
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\User Interface.pdb
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\BE.dll
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\BLL.dll
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\Services.dll
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\DAL.dll
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\BE.pdb
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\BLL.pdb
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\Services.pdb
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\bin\Debug\DAL.pdb
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User Interface.csproj.AssemblyReference.cache
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User Interface.csproj.SuggestedBindingRedirects.cache
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.AdmCursos.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.AdmIdioma.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.AdmRoles.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.AdmTextos.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.AdmUsuarios.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.AltaAlumno.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.DatosAlumno.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.Home.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.LogIn.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User_Interface.Properties.Resources.resources
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User Interface.csproj.GenerateResource.cache
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User Interface.csproj.CoreCompileInputs.cache
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User Interface.csproj.CopyComplete
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User Interface.exe
+C:\Users\Santi\Desktop\Campo\template-campo\User Interface\obj\Debug\User Interface.pdb

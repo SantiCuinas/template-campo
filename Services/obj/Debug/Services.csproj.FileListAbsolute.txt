@@ -20,3 +20,14 @@ Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.dll
 Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.pdb
 Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.FormActualizable.resources
 Y:\Sac\Repos\template-campo\Services\obj\Debug\Services.csproj.GenerateResource.cache
+C:\Users\Santi\Desktop\Campo\template-campo\Services\bin\Debug\Services.dll
+C:\Users\Santi\Desktop\Campo\template-campo\Services\bin\Debug\Services.pdb
+C:\Users\Santi\Desktop\Campo\template-campo\Services\bin\Debug\BE.dll
+C:\Users\Santi\Desktop\Campo\template-campo\Services\bin\Debug\BE.pdb
+C:\Users\Santi\Desktop\Campo\template-campo\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+C:\Users\Santi\Desktop\Campo\template-campo\Services\obj\Debug\Services.FormActualizable.resources
+C:\Users\Santi\Desktop\Campo\template-campo\Services\obj\Debug\Services.csproj.GenerateResource.cache
+C:\Users\Santi\Desktop\Campo\template-campo\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\Santi\Desktop\Campo\template-campo\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\Santi\Desktop\Campo\template-campo\Services\obj\Debug\Services.dll
+C:\Users\Santi\Desktop\Campo\template-campo\Services\obj\Debug\Services.pdb

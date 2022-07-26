@@ -1,6 +1,6 @@
-﻿    using System.Collections.Generic;
+﻿using BE;
+using System.Collections.Generic;
 using System.Data.SqlClient;
-using BE;
 
 namespace DAL
 {
@@ -33,6 +33,33 @@ namespace DAL
             return cursoList;
         }
 
+        public List<Alumno> GetAlumnosForCurso(string id)
+        {
+            var conn = new SqlConnection(this.connectionString);
+            var queryString = "SELECT * FROM curso_alumno WHERE curso_id = @Id";
+            SqlParameter[] param = new SqlParameter[1];
+            var query = new SqlCommand(queryString, conn);
+            param[0] = new SqlParameter("@Id", id);
+            query.Parameters.Add(param[0]);
+
+            List<Alumno> alumnoList = new List<Alumno>();
+            var alumnoDAO = new AlumnoDAO(); 
+            conn.Open();
+            var data = query.ExecuteReader();
+
+            if (data.HasRows)
+            {
+                while (data.Read())
+                {
+                    var alumno = alumnoDAO.getAlumnoById(data["alumno_id"].ToString());
+                    if (alumno != null) alumnoList.Add(alumno);
+                }
+            }
+
+            conn.Close();
+            return alumnoList;
+        }
+
         public Curso GetCurso(string cursoId)
         {
             var conn = new SqlConnection(this.connectionString);
@@ -48,7 +75,7 @@ namespace DAL
             if (data.HasRows)
             {
                 data.Read();
-                curso = new Curso() { nombre = data["nombre"].ToString(), id = data["id"].ToString() };
+                curso = new Curso() { nombre = data["nombre"].ToString(), id = data["id"].ToString(), listaInscriptos = new ListaInscriptos() { alumnos = GetAlumnosForCurso(data["id"].ToString()), capacidad = 50 } };
             }
             conn.Close();
             return curso;
