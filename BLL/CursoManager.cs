@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using BE;
+﻿using BE;
 using DAL;
+using System.Collections.Generic;
 
 namespace BLL
 {
@@ -12,22 +12,31 @@ namespace BLL
             return cursoDAO.GetAllCursos();
         }
 
-        public void UpdateCursos(Alumno alumno)
+        public void UpdateCursos(List<Curso> curso, Alumno alumno)
         {
             CursoDAO cursoDAO = new CursoDAO();
-            cursoDAO.UpdateCursos(alumno);
+            cursoDAO.UpdateCursos3(alumno, curso);
         }
 
         public Curso AsignarAlumno(Alumno alumno, Curso curso)
         {
-            if (curso.listaInscriptos.alumnos.Count >= curso.listaInscriptos.capacidad)
+            if (curso.listaEspera.alumnos.Find(x => x.id == alumno.id) != null)
             {
-                curso.listaEspera.alumnos.Add(alumno);
-            } else
-            {
-                curso.listaInscriptos.alumnos.Add(alumno);
+                var alumnoEspera = curso.listaEspera.alumnos.Find(x => x.id == alumno.id);
+                curso.listaEspera.alumnos.Remove(alumnoEspera);
             }
 
+            if (curso.listaInscriptos.alumnos.Find(x => x.id == alumno.id) == null)
+            {
+                if (curso.listaInscriptos.alumnos.Count >= curso.listaInscriptos.capacidad)
+                {
+                    curso.listaEspera.alumnos.Add(alumno);
+                }
+                else
+                {
+                    curso.listaInscriptos.alumnos.Add(alumno);
+                }
+            }
             return curso;
         }
     }

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using BE;
+﻿using BE;
 using BLL;
 using Services;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace User_Interface
 {
@@ -40,8 +40,13 @@ namespace User_Interface
             var cursos = cursoMngr.GetCursos();
             foreach (var curso in cursos)
             {
+                curso.nombre = curso.nombre + " - (" + curso.listaInscriptos.alumnos.Count + "/" + curso.listaInscriptos.capacidad + ")";
+                if (curso.listaEspera.alumnos.Find(x => x.id == alumno.id) != null)
+                {
+                    curso.nombre = curso.nombre + " - " + Session.idioma.textos.Find(x => x.id == "MSG_09".ToString())?.texto;
+                }
                 clbCursos.Items.Add(curso);
-                if (alumno.cursos.Find(x => x.id == curso.id) != null)
+                if (curso.listaInscriptos.alumnos.Find(x => x.id == alumno.id) != null)
                 {
                     clbCursos.SetItemChecked(index, true);
                 }
@@ -52,14 +57,18 @@ namespace User_Interface
         private void button1_Click(object sender, EventArgs e)
         {
             alumno.cursos = new List<Curso>();
-            foreach (var curso in clbCursos.CheckedItems)
+            var listCurso = new List<Curso>();
+            var esperaFlag = false;
+            foreach (Curso curso in clbCursos.CheckedItems)
             {
-                alumno.cursos.Add((Curso)curso);
+                var countEspera = curso.listaEspera.alumnos.Count;
+                listCurso.Add(curso);
+                cursoMngr.AsignarAlumno(alumno, curso);
+                if (curso.listaEspera.alumnos.Count > countEspera) esperaFlag = true;
             }
-            cursoMngr.UpdateCursos(alumno);
 
-
-
+            cursoMngr.UpdateCursos(listCurso, alumno);
+            if (esperaFlag) MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_08".ToString())?.texto, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             RefreshCursosList();
         }
 

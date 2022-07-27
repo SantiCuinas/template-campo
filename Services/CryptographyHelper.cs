@@ -13,7 +13,8 @@ namespace Services
 
         public static string decrypt(string text)
         {
-            return Encoding.Unicode.GetString(ProtectedData.Unprotect(Convert.FromBase64String(text), null, DataProtectionScope.CurrentUser));
+            //return Encoding.Unicode.GetString(ProtectedData.Unprotect(Convert.FromBase64String(text), null, DataProtectionScope.CurrentUser));
+            return text;
         }
         public static string hash(string value)
         {

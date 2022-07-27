@@ -42,7 +42,7 @@ namespace DAL
             if (data.HasRows)
             {
                 data.Read();
-                alumno = new Alumno() { nombre = data["nombre"].ToString(), id = data["id"].ToString(), apellido = data["apellido"].ToString(), fecha_nacimiento = data["fecha_nacimiento"].ToString(), email = data["email"].ToString(), direccion = data["direccion"].ToString(), fecha_alta = data["fecha_alta"].ToString(), dni = data["dni"].ToString(), cursos = cursoDAO.getCursosForStudent(data["id"].ToString()) };
+                alumno = new Alumno() { nombre = data["nombre"].ToString(), id = data["id"].ToString(), apellido = data["apellido"].ToString(), fecha_nacimiento = data["fecha_nacimiento"].ToString(), email = data["email"].ToString(), direccion = data["direccion"].ToString(), fecha_alta = data["fecha_alta"].ToString(), dni = data["dni"].ToString() };
             }
 
             conn.Close();

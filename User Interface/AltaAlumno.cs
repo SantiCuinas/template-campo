@@ -47,7 +47,7 @@ namespace User_Interface
             if (verificationErrors.Count == 0)
             {
                 alumnoMngr.altaAlumno(alumno);
-                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_05")?.texto, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Session.idioma.textos.Find(x => x.id == "MSG_10")?.texto, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
